@@ -51,6 +51,9 @@ const mdxPlugins = {
           linkImagesToOriginal: true,
         },
       },
+      `gatsby-remark-katex`,
+      `gatsby-remark-graphviz`,
+      `gatsby-remark-code-titles`,
       {
         resolve: `gatsby-remark-prismjs`,
         options: {

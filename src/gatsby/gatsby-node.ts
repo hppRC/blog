@@ -59,7 +59,7 @@ type Query = {
 
 export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions: { createPage } }) => {
   const postTemplate = require.resolve(`../templates/post.tsx`);
-  // const postsByTagTemplate = require.resolve(`./src/templates/posts-by-tag.tsx`);
+  const postsByTagTemplate = require.resolve(`../templates/posts-by-tag.tsx`);
 
   const result = await graphql<Query>(allMdxQuery);
   if (!result.data?.allMdx.edges) return;
@@ -85,20 +85,20 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions:
     });
   });
 
-  // // generate each tag's posts page if the template exits
-  // const tags = Object.keys(postsByTag);
+  // generate each tag's posts page if the template exits
+  const tags = Object.keys(postsByTag);
 
-  // tags.forEach((tagName) => {
-  //   const posts = postsByTag[tagName];
-  //   createPage({
-  //     path: `tags/${tagName}`,
-  //     component: postsByTagTemplate,
-  //     context: {
-  //       posts,
-  //       tagName,
-  //     },
-  //   });
-  // });
+  tags.forEach((tagName) => {
+    const posts = postsByTag[tagName];
+    createPage({
+      path: `tags/${tagName}`,
+      component: postsByTagTemplate,
+      context: {
+        posts,
+        tagName,
+      },
+    });
+  });
 };
 
 // export const onCreateNode: GatsbyNode['onCreateNode'] = (args) => {
