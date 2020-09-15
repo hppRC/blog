@@ -989,7 +989,7 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.3", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.3", "@babel/runtime@^7.11.2", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
   version "7.11.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.11.2.tgz#f549c13c754cc40b87644b9fa9f09a6a95fe0736"
   integrity sha512-TeWkU52so0mPtDcaCTxNBI/IHiz0pZgr8VEFqXFtZWpYD08ZB6FaSwVAS8MKRQAP3bYKiVjwysOJgMFY28o6Tw==
@@ -2016,6 +2016,13 @@
   dependencies:
     "@types/unist" "*"
 
+"@types/mdx-js__react@^1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@types/mdx-js__react/-/mdx-js__react-1.5.2.tgz#eb87df0ac135a685cc9bb01075a9036c7b395b0d"
+  integrity sha512-M/z869+SVti16ZGqMwg46XTNsBKj5/PNcId9NpjEUVPI2V8wzXpbkkhmhZy1n16nQvMAC6HJuh+Dogn8vPLV6w==
+  dependencies:
+    "@types/react" "*"
+
 "@types/minimatch@*":
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
@@ -2120,6 +2127,11 @@
   dependencies:
     "@types/glob" "*"
     "@types/node" "*"
+
+"@types/smooth-scroll@^16.1.0":
+  version "16.1.0"
+  resolved "https://registry.yarnpkg.com/@types/smooth-scroll/-/smooth-scroll-16.1.0.tgz#903859ef225dc6cdbfa0bde4406ef539d7a5a7f7"
+  integrity sha512-7vcLoVwdalVHBjVoPVzBISN8mHx7oqPOXyTgkXb3OVRgjdeed27TqRc5+D1sub5QozNfJ9SStbR/Kpf0TxXTKQ==
 
 "@types/tmp@^0.0.33":
   version "0.0.33"
@@ -7231,12 +7243,12 @@ gatsby-remark-external-links@^0.0.4:
     unist-util-find "^1.0.1"
     unist-util-visit "^1.1.3"
 
-gatsby-remark-graphviz@^1.3.1:
-  version "1.3.10"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-graphviz/-/gatsby-remark-graphviz-1.3.10.tgz#a68554d2f28c0ee464897154fc424988176c4490"
-  integrity sha512-kl6WC7SBEV5uq6/M9HrNtbDKSoQ/OClO7H/by85csgmissAOzsMimnsMbzZWMv3zTaMNPeu2WlOUpKjzyfubqQ==
+gatsby-remark-graphviz@^1.3.11:
+  version "1.3.11"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-graphviz/-/gatsby-remark-graphviz-1.3.11.tgz#f474c81042651746706765b70d54c035bcaf2c21"
+  integrity sha512-x2rrq+99Dof+fZFrMaMoMySSPaCrE8adr48TA/+zj3GNRiSHbMpCSsGl3xIJSObsWg3nECq2ENXBBZEqelAGcw==
   dependencies:
-    "@babel/runtime" "^7.10.3"
+    "@babel/runtime" "^7.11.2"
     cheerio "^1.0.0-rc.3"
     unist-util-visit "^1.4.1"
     viz.js "^2.1.2"
@@ -7258,12 +7270,12 @@ gatsby-remark-images@^3.3.3:
     unist-util-select "^1.5.0"
     unist-util-visit-parents "^2.1.2"
 
-gatsby-remark-katex@^3.3.1:
-  version "3.3.11"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-katex/-/gatsby-remark-katex-3.3.11.tgz#d02314acd886c7dba018e57b8292ad10e9859de0"
-  integrity sha512-6Wu7U8OmtEWf9vBqotEMvVhTLCsFt+WwUC2/Ncm2xbsMY6NQXnFpHnHx6EfcHcGuJ778DXGfs7KZUUBsGEAB/g==
+gatsby-remark-katex@^3.3.12:
+  version "3.3.12"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-katex/-/gatsby-remark-katex-3.3.12.tgz#3a7a23730d5040a56f58123be843952c6add585b"
+  integrity sha512-b5IZUna7wGrUnjAK2apXw/TSQlKZ/P643lutC1L5r9jCG6r/XIyXiSDpuWgwWvv0phkrOACtmV2mDEDUgOv8tQ==
   dependencies:
-    "@babel/runtime" "^7.10.3"
+    "@babel/runtime" "^7.11.2"
     remark-math "^1.0.6"
     unist-util-visit "^1.4.1"
 
@@ -14256,6 +14268,11 @@ slugify@^1.4.4:
   version "1.4.5"
   resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.4.5.tgz#a7517acf5f4c02a4df41e735354b660a4ed1efcf"
   integrity sha512-WpECLAgYaxHoEAJ8Q1Lo8HOs1ngn7LN7QjXgOLbmmfkcWvosyk4ZTXkTzKyhngK640USTZUlgoQJfED1kz5fnQ==
+
+smooth-scroll@^16.1.3:
+  version "16.1.3"
+  resolved "https://registry.yarnpkg.com/smooth-scroll/-/smooth-scroll-16.1.3.tgz#c5b68194b4186173f9f61065103ae4e26ce36885"
+  integrity sha512-ca9U+neJS/cbdScTBuUTCZvUWNF2EuMCk7oAx3ImdeRK5FPm+xRo9XsVHIkeEVkn7MBRx+ufVEhyveM4ZhaTGA==
 
 snake-case@^2.1.0:
   version "2.1.0"
