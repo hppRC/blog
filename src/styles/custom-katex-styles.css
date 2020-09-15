@@ -1,0 +1,12 @@
+.frac-line, .overline-line {
+  border-color: #20202f;
+}
+
+.katex {
+  overflow-x: auto;
+}
+
+/* temporary */
+.katex-html .tag {
+  display: none;
+}
