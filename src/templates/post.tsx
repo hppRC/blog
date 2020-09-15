@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
-import { SEO } from 'src/components';
+import { SEO, SideContents } from 'src/components';
 
 import type { FluidObject } from 'gatsby-image';
 
@@ -17,13 +17,19 @@ type Props = {
   previous?: MdxNode;
   next?: MdxNode;
   slug: string;
+  path: string;
 };
 
-const Component: React.FCX<Props> = ({ body, fluid, ...rest }) => (
+const Component: React.FCX<Props> = ({ body, fluid, headings, path }) => (
   <main>
     {fluid && <Img fluid={fluid} alt='cover image' />}
-    <article>
-      <MDXRenderer>{body}</MDXRenderer>
+    <article className='lg:flex max-w-screen-lg mx-auto'>
+      <div className='lg:w-3/4'>
+        <MDXRenderer>{body}</MDXRenderer>
+      </div>
+      <div className='lg:w-1/4 lg:pl-8'>
+        <SideContents headings={headings} path={path} />
+      </div>
     </article>
   </main>
 );
@@ -39,7 +45,7 @@ const Container: React.FCX<ContainerProps> = ({ data, pageContext, path }) => {
   return (
     <>
       <SEO title='Posts' pathname={path} image={fluid?.src} />
-      <Component {...{ body, headings, title, date, tags, fluid, previous, next, slug }} />
+      <Component {...{ path, body, headings, title, date, tags, fluid, previous, next, slug }} />
     </>
   );
 };
