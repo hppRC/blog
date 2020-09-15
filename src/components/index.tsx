@@ -1,2 +1,5 @@
-export * from './external-link';
-export * from './seo';
+export { ExternalLink } from './external-link';
+export { SEO } from './seo';
+export { ArticleCard } from './article-card';
+export { SideContents } from './side-contents';
+export { Ad } from './ad';
