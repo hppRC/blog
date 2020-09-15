@@ -10,6 +10,14 @@ type PostPageContext = {
   slug: string;
 };
 
+type PostsByTagPageContext = {
+  posts: {
+    frontmatter: Frontmatter;
+    excerpt: string
+  }[];
+  tagName: string;
+};
+
 type PostData = {
   mdx: {
     body: string;
