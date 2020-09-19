@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://blog.hpprc.dev/sitemap.xml
+Host: https://blog.hpprc.dev
