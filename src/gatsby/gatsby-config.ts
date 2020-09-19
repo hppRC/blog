@@ -4,12 +4,13 @@ import tailwindConfig from '../../tailwind.config';
 
 const siteTitle = `hpp blog`;
 const siteDescription = `Personal blog`;
+const siteUrl = `https://blog.hpprc.dev`;
 
 const siteMetadata = {
   siteTitle,
   siteTitleAlt: `hpp blog - @hppRC/blog`,
   siteHeadline: `@hppRC's blog`,
-  siteUrl: `https://blog.hpprc.dev`,
+  siteUrl,
   siteDescription,
   siteLanguage: `ja`,
   siteImage: `/banner.jpg`,
@@ -132,6 +133,46 @@ const mdxPlugins = {
   },
 };
 
+const SEOplugins = [
+  {
+    resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+    options: { siteUrl },
+  },
+  `gatsby-plugin-advanced-sitemap`,
+  {
+    resolve: `gatsby-plugin-robots-txt`,
+    options: {
+      host: siteUrl,
+      sitemap: `${siteUrl}/sitemap.xml`,
+      policy: [{ userAgent: `*`, allow: `/` }],
+    },
+  },
+  {
+    resolve: `gatsby-plugin-google-analytics`,
+    options: {
+      // replace "UA-XXXXXXXXX-X" with your own Tracking ID
+      trackingId: `UA-149661454-1`,
+    },
+  },
+  // gatsby-plugin-manifest should be described before gatsby-plugin-offline
+  {
+    resolve: `gatsby-plugin-manifest`,
+    options: {
+      name: siteTitle,
+      short_name: siteTitle,
+      description: siteDescription,
+      Scope: `/`,
+      start_url: `/?utm_source=homescreen`,
+      background_color: `#fff`,
+      theme_color: `#03030f`,
+      display: `standalone`,
+      // path from root directory
+      icon: `contents/assets/icon.png`,
+    },
+  },
+  `gatsby-plugin-offline`,
+];
+
 export default {
   siteMetadata,
   plugins: [
@@ -165,5 +206,6 @@ export default {
     `gatsby-plugin-root-import`,
     mdxPlugins,
     RSSFeedPlugin,
+    ...SEOplugins,
   ],
 };
