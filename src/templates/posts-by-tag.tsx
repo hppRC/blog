@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React from 'react';
 import { SEO } from 'src/components';
 
@@ -14,10 +15,12 @@ const Component: React.FCX<Props> = ({ className, tagName, posts }) => (
         const { slug } = frontmatter;
         const fluid = frontmatter.cover?.childImageSharp.fluid;
         return (
-          <li key={slug}>
-            {tagName}
-            {excerpt}
-          </li>
+          <Link to={`/posts/${slug}`}>
+            <li key={slug}>
+              {tagName}
+              {excerpt}
+            </li>
+          </Link>
         );
       })}
     </ul>

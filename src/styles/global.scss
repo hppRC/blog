@@ -18,6 +18,23 @@ html {
   min-height: 100vh;
 }
 
+
+#custom-hatebu-button {
+  width: 32px;
+  height: 32px;
+  > a {
+    display: block;
+    font-weight: 700;
+    line-height: 32px;
+
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    background: linear-gradient(#00a5e0 0%, #00a5e0 40%, #008de1 60%, #008de1 100%);
+    border-radius: 50%;
+  }
+}
+
 @media screen and (max-width: 1100px) {
 }
 

@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
-import { SEO, SideContents } from 'src/components';
+import { PostFooterContents, SEO, SideContents } from 'src/components';
 
 import type { FluidObject } from 'gatsby-image';
 
@@ -20,21 +20,21 @@ type Props = {
   path: string;
 };
 
-const Component: React.FCX<Props> = ({ body, fluid, headings, path }) => (
-  <main>
-    {fluid && <Img fluid={fluid} alt='cover image' />}
-    <article className='lg:flex max-w-screen-lg mx-auto'>
-      <div className='lg:w-3/4'>
-        <MDXRenderer>{body}</MDXRenderer>
-      </div>
-      <div className='lg:w-1/4 lg:pl-8'>
-        <SideContents headings={headings} path={path} />
-      </div>
-    </article>
-  </main>
+const Component: React.FCX<Props> = ({ body, fluid, headings, path, next, previous, title }) => (
+  <article className='lg:grid lg:grid-cols-5 pb-12 mx-auto'>
+    <div className='col-start-2 col-span-3'>
+      {fluid && <Img fluid={fluid} alt='cover image' />}
+      <MDXRenderer>{body}</MDXRenderer>
+      <PostFooterContents next={next} previous={previous} />
+    </div>
+    <div className=''>
+      <SideContents headings={headings} path={path} title={title} />
+    </div>
+  </article>
 );
 
 const Container: React.FCX<ContainerProps> = ({ data, pageContext, path }) => {
+  // while reloading page, data.mdx may be null because Gatsby's page query is asynchronous.
   if (!data.mdx) return <></>;
 
   const { body, headings, frontmatter } = data.mdx;
