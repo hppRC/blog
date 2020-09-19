@@ -9,7 +9,7 @@ const siteMetadata = {
   siteTitle,
   siteTitleAlt: `hpp blog - @hppRC/blog`,
   siteHeadline: `@hppRC's blog`,
-  siteUrl: `https://blog.hpprc.com`,
+  siteUrl: `https://blog.hpprc.dev`,
   siteDescription,
   siteLanguage: `ja`,
   siteImage: `/banner.jpg`,
@@ -19,6 +19,70 @@ const siteMetadata = {
     twitter: `https://twitter.com/hpp_ricecake`,
     github: `https://github.com/hppRC`,
     qiita: `https://qiita.com/hppRC`,
+  },
+};
+
+type RSSQueryResult = {
+  query: {
+    site: SiteMetadata;
+    allMdx: {
+      nodes: MdxNode[];
+    };
+  };
+};
+
+const RSSFeedPlugin = {
+  resolve: `gatsby-plugin-feed`,
+  options: {
+    query: `
+    {
+      site {
+        siteMetadata {
+          siteTitle
+          siteDescription
+          siteUrl
+        }
+      }
+    }
+  `,
+    feeds: [
+      {
+        serialize: (result: RSSQueryResult): unknown => {
+          const {
+            query: { site, allMdx },
+          } = result;
+          const { siteUrl } = site.siteMetadata;
+          return allMdx.nodes.map(({ excerpt, body, frontmatter }) => {
+            const { slug, date } = frontmatter;
+            return {
+              ...frontmatter,
+              description: excerpt,
+              date,
+              url: `${siteUrl}/posts/${slug}`,
+              guid: `${siteUrl}/posts/${slug}`,
+              custom_elements: [{ 'content:encoded': body }],
+            };
+          });
+        },
+        query: `
+        {
+          allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
+            nodes {
+              excerpt
+              body
+              frontmatter {
+                title
+                date
+                slug
+              }
+            }
+          }
+        }
+      `,
+        output: `/rss.xml`,
+        title: `${siteTitle} RSS feed`,
+      },
+    ],
   },
 };
 
@@ -100,5 +164,6 @@ export default {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-root-import`,
     mdxPlugins,
+    RSSFeedPlugin,
   ],
 };

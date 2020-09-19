@@ -12,9 +12,9 @@ export const wrapRootElement = ({ element }: { element: React.FC }): JSX.Element
   return (
     <MDXProvider
       components={{
-        h1: (props) => <h1 {...props} className='text-2xl font-bold pt-8 pb-4' />,
-        h2: (props) => <h2 {...props} className='text-xl font-bold pt-8 pb-4' />,
-        h3: (props) => <h3 {...props} className='text-lg font-medium pt-8 pb-4' />,
+        h1: (props) => <h1 {...props} className='text-4xl font-bold pt-12 pb-4' />,
+        h2: (props) => <h2 {...props} className='text-2xl font-bold pt-12 pb-4' />,
+        h3: (props) => <h3 {...props} className='text-xl font-medium pt-12 pb-4' />,
       }}
     >
       <Layout>{element}</Layout>
