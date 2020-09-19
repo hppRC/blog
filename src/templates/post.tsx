@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
@@ -20,14 +20,29 @@ type Props = {
   path: string;
 };
 
-const Component: React.FCX<Props> = ({ body, fluid, headings, path, next, previous, title }) => (
-  <article className='lg:grid lg:grid-cols-5 pb-12 mx-auto'>
+const Component: React.FCX<Props> = ({ body, fluid, headings, path, next, date, previous, title, tags }) => (
+  <article className='lg:grid lg:grid-cols-5 pb-12 mx-auto w-full'>
     <div className='col-start-2 col-span-3'>
-      {fluid && <Img fluid={fluid} alt='cover image' />}
+      <div className='py-2'>
+        <h1 className='text-4xl font-extrabold'>{title}</h1>
+        <ul className='flex'>
+          {tags?.map((tagName) => (
+            <Link
+              key={tagName}
+              className='block rounded border border-gray-900 mr-2 hover:bg-gray-200'
+              to={`/tags/${tagName}`}
+            >
+              <li className='inline-block text-xs px-2 py-1 font-bold'>{tagName}</li>
+            </Link>
+          ))}
+        </ul>
+        <p className='pt-2'>{date}</p>
+      </div>
+      {fluid && <Img fluid={fluid} className='mb-8' alt='cover image' />}
       <MDXRenderer>{body}</MDXRenderer>
       <PostFooterContents next={next} previous={previous} />
     </div>
-    <div className=''>
+    <div className='px-2'>
       <SideContents headings={headings} path={path} title={title} />
     </div>
   </article>
@@ -44,7 +59,7 @@ const Container: React.FCX<ContainerProps> = ({ data, pageContext, path }) => {
 
   return (
     <>
-      <SEO title='Posts' pathname={path} image={fluid?.src} />
+      <SEO title={title} pathname={path} image={fluid?.src} />
       <Component {...{ path, body, headings, title, date, tags, fluid, previous, next, slug }} />
     </>
   );

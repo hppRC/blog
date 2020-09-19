@@ -15,8 +15,8 @@ const Component: React.FCX<Props> = ({ className, tagName, posts }) => (
         const { slug } = frontmatter;
         const fluid = frontmatter.cover?.childImageSharp.fluid;
         return (
-          <Link to={`/posts/${slug}`}>
-            <li key={slug}>
+          <Link key={slug} to={`/posts/${slug}`}>
+            <li>
               {tagName}
               {excerpt}
             </li>

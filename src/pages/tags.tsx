@@ -12,7 +12,7 @@ type Props = {
 const Component: React.FC<Props> = ({ tags }) => (
   <ul>
     {tags.map((tagName) => (
-      <Link to={`/tags/${tagName}`}>
+      <Link key={tagName} to={`/tags/${tagName}`}>
         <li key={tagName}>{tagName}</li>
       </Link>
     ))}
