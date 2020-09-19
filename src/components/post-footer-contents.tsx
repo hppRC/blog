@@ -8,11 +8,11 @@ type Props = {
 
 export const PostFooterContents: React.FCX<Props> = ({ next, previous }) => (
   <div className='w-full flex justify-between py-4'>
-    <Link to={`/posts/${next?.frontmatter.slug}`}>
-      <div>{next?.excerpt}</div>
-    </Link>
     <Link to={`/posts/${previous?.frontmatter.slug}`}>
-      <div>{previous?.excerpt}</div>
+      <p className='underline'>{previous?.frontmatter.title}</p>
+    </Link>
+    <Link className='block' to={`/posts/${next?.frontmatter.slug}`}>
+      <p className='underline'>{next?.frontmatter.title}</p>
     </Link>
   </div>
 );
