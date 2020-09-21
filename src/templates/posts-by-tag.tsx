@@ -21,7 +21,7 @@ const Component: React.FCX<Props> = ({ tagName, posts, path }) => (
       </ul>
     </div>
     <div className='lg:pl-4'>
-      <SideContents path={path} />
+      <SideContents path={path} title={tagName} />
     </div>
   </div>
 );

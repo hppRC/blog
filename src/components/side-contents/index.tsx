@@ -7,7 +7,7 @@ import { TableOfContents } from './table-of-contents';
 
 type Props = {
   path: string;
-  title?: string;
+  title: string;
   headings?: {
     value: string;
     depth: number;
@@ -21,7 +21,7 @@ export const SideContents: React.FCX<Props> = ({ headings, path, title }) => {
     <div className='sticky top-0 pt-4'>
       {headings && <TableOfContents headings={headings} path={path} title={title} />}
       <NewPosts slug={slug} />
-      <ShareButtons slug={slug} title={title} />
+      <ShareButtons path={path} title={title} />
       <Ad />
     </div>
   );

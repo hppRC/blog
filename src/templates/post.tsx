@@ -34,10 +34,10 @@ const Component: React.FCX<Props> = ({ body, fluid, headings, path, next, date, 
       <PostFooter next={next} previous={previous} slug={slug} />
     </article>
     <div className='hidden lg:block lg:pl-4'>
-      <SideContents headings={headings} path={path} title={title} />
+      <SideContents headings={headings} path={path} title={title || slug} />
     </div>
     <div className='border-t mt-8 lg:hidden'>
-      <SideContents path={path} title={title} />
+      <SideContents path={path} title={title || slug} />
     </div>
   </div>
 );

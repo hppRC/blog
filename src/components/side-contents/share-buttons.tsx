@@ -17,11 +17,11 @@ const HatebuButton: React.FCX<HatebuProps> = ({ className, url, title }) => (
   </button>
 );
 
-export const ShareButtons: React.FC<{ slug: string; title?: string }> = ({ slug, title }) => {
+export const ShareButtons: React.FC<{ title?: string, path?:string }> = ({ path, title }) => {
   const { siteUrl, social } = useSiteMetadata();
   const twitter = social?.twitter || `https://twitter.com/hpp_ricecake`;
   const twitterAccount = twitter.split(`/`).pop(); // @hpp_ricecaeke -> hpp_ricecake
-  const articleUrl = `${siteUrl}/posts/${slug}`;
+  const articleUrl = `${siteUrl}${path}`;
 
   return (
     <div className='border-b lg:px-2 py-4'>

@@ -24,7 +24,7 @@ const Component: React.FC<Props> = ({ tags }) => (
       </ul>
     </div>
     <div className='lg:pl-4'>
-      <SideContents path='/tags' />
+      <SideContents path='/tags' title='Tags' />
     </div>
   </section>
 );

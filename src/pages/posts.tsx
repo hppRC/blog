@@ -22,7 +22,7 @@ const Component: React.FC<Props> = ({ posts, path }) => (
       </ul>
     </div>
     <div className='lg:pl-4'>
-      <SideContents path={path} />
+      <SideContents path={path} title='Posts' />
     </div>
   </div>
 );
