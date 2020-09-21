@@ -63,7 +63,7 @@ const RSSFeedPlugin = {
         },
         query: `
         {
-          allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
+          allMdx(filter: { slug: { ne: "dummy" } }, sort: { order: DESC, fields: [frontmatter___date] }) {
             nodes {
               excerpt
               body
