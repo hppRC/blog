@@ -1,6 +1,6 @@
 import tailwindcss from 'tailwindcss';
 
-import tailwindConfig from '../../tailwind.config';
+const tailwindConfig = require(`../../tailwind.config`);
 
 const siteTitle = `hpp blog`;
 const siteDescription = `Personal blog`;
@@ -25,9 +25,9 @@ const siteMetadata = {
 
 type RSSQueryResult = {
   query: {
-    site: SiteMetadata;
+    site: { siteMetadata: SiteMetadata };
     allMdx: {
-      nodes: MdxNode[];
+      nodes: Post[];
     };
   };
 };
@@ -53,17 +53,13 @@ const RSSFeedPlugin = {
             query: { site, allMdx },
           } = result;
           const { siteUrl } = site.siteMetadata;
-          return allMdx.nodes.map(({ excerpt, body, frontmatter }) => {
-            const { slug, date } = frontmatter;
-            return {
-              ...frontmatter,
-              description: excerpt,
-              date,
-              url: `${siteUrl}/posts/${slug}`,
-              guid: `${siteUrl}/posts/${slug}`,
-              custom_elements: [{ 'content:encoded': body }],
-            };
-          });
+          return allMdx.nodes.map(({ excerpt, body, frontmatter, slug }) => ({
+            ...frontmatter,
+            description: excerpt,
+            url: `${siteUrl}/posts/${slug}`,
+            guid: `${siteUrl}/posts/${slug}`,
+            custom_elements: [{ 'content:encoded': body }],
+          }));
         },
         query: `
         {
@@ -129,11 +125,13 @@ const mdxPlugins = {
           noInlineHighlight: false,
         },
       },
+      `gatsby-remark-embedder`,
     ],
   },
 };
 
 const SEOplugins = [
+  `gatsby-plugin-react-helmet`,
   {
     resolve: `gatsby-plugin-react-helmet-canonical-urls`,
     options: { siteUrl },
@@ -207,5 +205,11 @@ export default {
     mdxPlugins,
     RSSFeedPlugin,
     ...SEOplugins,
+    {
+      resolve: `gatsby-plugin-webpack-bundle-analyzer`,
+      options: {
+        openAnalyzer: false,
+      },
+    },
   ],
 };

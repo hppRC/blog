@@ -13,10 +13,10 @@ aspectRatio
 
 const blogData = `
 excerpt
+slug
 frontmatter {
-  slug
   title
-  date(formatString: "YYYY-MM-DD")
+  date(formatString: "YYYY/MM/DD")
   tags
   cover {
     childImageSharp {
@@ -31,7 +31,7 @@ frontmatter {
 // you can't use QraphQL query fragments to get fluid object in gatsby-node.
 const allMdxQuery = `
 query {
-  allMdx(sort: { order: ASC, fields: [frontmatter___date] }) {
+  allMdx(filter: { slug: { ne: "dummy" } }, sort: { order: DESC, fields: [frontmatter___date] }) {
     edges {
       previous {
         ${blogData}
@@ -50,9 +50,9 @@ query {
 type Query = {
   allMdx: {
     edges: {
-      previous?: MdxNode;
-      next?: MdxNode;
-      node: MdxNode;
+      previous?: Post;
+      next?: Post;
+      node: Post;
     }[];
   };
 };
@@ -65,10 +65,12 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions:
   if (!result.data?.allMdx.edges) return;
 
   const { edges } = result.data.allMdx;
-  const postsByTag: { [key: string]: MdxNode[] } = {}; // Store posts for each tags
+  const postsByTag: { [key: string]: Post[] } = {}; // Store posts for each tags
 
   edges.forEach(({ previous, next, node }) => {
-    const { slug, tags } = node.frontmatter;
+    const { frontmatter, slug } = node;
+    const { tags } = frontmatter;
+
     tags?.forEach((tag) => {
       if (!postsByTag[tag]) postsByTag[tag] = [];
       postsByTag[tag].push(node);
