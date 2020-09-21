@@ -26,7 +26,7 @@ const PostsIcon: React.FC = () => (
 const RssIcon: React.FC = () => (
   <Link to='/rss.xml'>
     <i>
-      <MdRssFeed fontSize='32' />
+      <MdRssFeed fontSize='36' />
     </i>
   </Link>
 );
@@ -34,7 +34,7 @@ const RssIcon: React.FC = () => (
 const DocumentIcon: React.FC = () => (
   <ExternalLink href='https://hpprc.dev'>
     <i>
-      <IoMdDocument fontSize='32' />
+      <IoMdDocument fontSize='34' />
     </i>
   </ExternalLink>
 );
@@ -59,7 +59,7 @@ export const Header: React.FC = () => (
   <header className='top-0 border-b w-full h-12 lg:h-16 lg:px-4'>
     <nav className='flex h-full max-w-screen-xl mx-auto items-center justify-between'>
       <Link to='/' className=''>
-        <h1 className='font-bold text-3xl'>hpp blog</h1>
+        <h1 className='font-bold text-3xl'>blog.hpprc.dev</h1>
       </Link>
       <ul className='flex items-center'>
         <li className='mx-1'>
@@ -71,7 +71,7 @@ export const Header: React.FC = () => (
         <li className='mx-1'>
           <TagsIcon />
         </li>
-        <li className='ml-1 mr-2'>
+        <li className='mx-1'>
           <DocumentIcon />
         </li>
         <li className='mx-1'>
