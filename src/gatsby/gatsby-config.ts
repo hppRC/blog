@@ -67,10 +67,10 @@ const RSSFeedPlugin = {
             nodes {
               excerpt
               body
+              slug
               frontmatter {
                 title
                 date
-                slug
               }
             }
           }
