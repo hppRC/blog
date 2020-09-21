@@ -1,53 +1,47 @@
-type MdxNode = {
+type Post = {
+  fileAbsolutePath: string;
   body: string;
   excerpt: string;
   frontmatter: Frontmatter;
+  slug: string;
+  headings: {
+    value: string;
+    depth: number;
+  }[];
 };
 
 type PostPageContext = {
-  previous: MdxNode;
-  next: MdxNode;
+  previous: Post;
+  next: Post;
   slug: string;
 };
 
 type PostsByTagPageContext = {
-  posts: {
-    frontmatter: Frontmatter;
-    excerpt: string
-  }[];
+  posts: Post[];
   tagName: string;
 };
 
 type PostData = {
-  mdx: {
-    body: string;
-    excerpt: string;
-    headings: {
-      value: string;
-      depth: number;
-    }[];
-    frontmatter: Frontmatter;
-  } | null;
+  mdx: Post | null;
 };
 
 
 type Frontmatter = Partial<{
-  slug: string;
   title: string;
   date: string;
   tags: string[];
   cover: {
     childImageSharp: {
-      fluid: FluidObject;
+      fluid: import("gatsby-image").FluidObject;
     };
   };
 }>;
 
 type PostsByTag = {
-  [key: string]: { frontmatter: Frontmatter; excerpt: string }[];
+  [key: string]: Post[];
 };
 
-type SiteMetadata = DeepPartial<{
+type SiteMetadata = Partial<{
   siteTitle: string;
   siteTitleAlt: string;
   siteHeadline: string;
@@ -55,19 +49,12 @@ type SiteMetadata = DeepPartial<{
   siteDescription: string;
   siteLanguage: string;
   author: string;
-  social: {
+  social: Partial<{
     twitter: string;
     github: string;
     qiita: string;
-  };
+  }>;
 }>;
-
-type Post = {
-  body: string;
-  excerpt: string;
-  frontmatter: Frontmatter;
-};
-
 
 type JsonLdConfig = Partial<{
   '@context': string;
