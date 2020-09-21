@@ -8,7 +8,7 @@ import { TableOfContents } from './table-of-contents';
 type Props = {
   path: string;
   title?: string;
-  headings: {
+  headings?: {
     value: string;
     depth: number;
   }[];
@@ -19,7 +19,7 @@ export const SideContents: React.FCX<Props> = ({ headings, path, title }) => {
   const slug = path.split(`/`).pop() || ``;
   return (
     <div className='sticky top-0 pt-12'>
-      <TableOfContents headings={headings} path={path} title={title} />
+      {headings && <TableOfContents headings={headings} path={path} title={title} />}
       <NewPosts slug={slug} />
       <ShareButtons slug={slug} title={title} />
       <Ad />

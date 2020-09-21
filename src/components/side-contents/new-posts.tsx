@@ -3,15 +3,15 @@ import React from 'react';
 import { useNewest6Posts } from 'src/hooks';
 
 export const NewPosts: React.FC<{ slug: string }> = ({ slug }) => {
-  const posts = useNewest6Posts().filter((post) => post.frontmatter.slug !== slug);
+  const posts = useNewest6Posts().filter((post) => post.slug !== slug);
   return (
-    <div className='py-4 px-2 border-t'>
+    <div className='py-4 px-2 border-b'>
       <p className='font-medium'>New posts</p>
       <ul>
         {posts.map((post) => (
-          <li className='hover:bg-gray-300' key={post.frontmatter.slug}>
-            <Link className='block m-2 underline' to={`/posts/${post.frontmatter.slug}`}>
-              {post.frontmatter.title}
+          <li className='m-2' key={post.slug}>
+            <Link to={`/posts/${post.slug}`}>
+              <p className='hover:opacity-50 underline'>{post.frontmatter?.title}</p>
             </Link>
           </li>
         ))}
