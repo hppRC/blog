@@ -24,11 +24,11 @@ const PostsIcon: React.FC = () => (
 );
 
 const RssIcon: React.FC = () => (
-  <Link to='/rss.xml'>
+  <ExternalLink href='/rss.xml'>
     <i>
       <MdRssFeed fontSize='36' />
     </i>
-  </Link>
+  </ExternalLink>
 );
 
 const DocumentIcon: React.FC = () => (
