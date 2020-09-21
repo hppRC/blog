@@ -21,7 +21,6 @@ type Props = {
   next?: Post;
   slug: string;
   path: string;
-  pathFromProjectRoot: string;
 };
 
 const Component: React.FCX<Props> = ({ body, fluid, headings, path, next, date, previous, title, tags, slug }) => (
@@ -56,7 +55,7 @@ const Container: React.FCX<PageProps> = ({ data, pageContext, path }) => {
   return (
     <>
       <SEO title={title} pathname={path} image={fluid?.src} />
-      <Component {...{ path, body, headings, title, date, tags, fluid, previous, next, slug, slug }} />
+      <Component {...{ path, body, headings, title, date, tags, fluid, previous, next, slug }} />
     </>
   );
 };
