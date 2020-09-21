@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[hpp blog RSS feed]]></title><description><![CDATA[hpp blog RSS feed]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 21 Sep 2020 18:24:24 GMT</lastBuildDate><item><title><![CDATA[test6]]></title><description><![CDATA[Test4 h…]]></description><link>https://blog.hpprc.dev/posts/6</link><guid isPermaLink="false">https://blog.hpprc.dev/posts/6</guid><pubDate>Sat, 25 Apr 2020 00:49:23 GMT</pubDate><content:encoded>function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i &lt; arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[hpp blog RSS feed]]></title><description><![CDATA[hpp blog RSS feed]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 21 Sep 2020 18:38:23 GMT</lastBuildDate><item><title><![CDATA[test6]]></title><description><![CDATA[Test4 h…]]></description><link>https://blog.hpprc.dev/posts/6</link><guid isPermaLink="false">https://blog.hpprc.dev/posts/6</guid><pubDate>Sat, 25 Apr 2020 00:49:23 GMT</pubDate><content:encoded>function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i &lt; arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i &lt; sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) &gt;= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
@@ -12871,33 +12871,6 @@ return function MDXContent(_ref) {
       &quot;position&quot;: &quot;relative&quot;
     }
   }, &quot;test&quot;), mdx(&quot;p&quot;, null, &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;));
-}
-;
-MDXContent.isMDXComponent = true;</content:encoded></item><item><title><![CDATA[dummy]]></title><description><![CDATA[Dummy]]></description><link>https://blog.hpprc.dev/posts/dummy</link><guid isPermaLink="false">https://blog.hpprc.dev/posts/dummy</guid><pubDate>Thu, 15 Mar 1900 00:49:23 GMT</pubDate><content:encoded>function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i &lt; arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i &lt; sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) &gt;= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i &lt; sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) &gt;= 0) continue; target[key] = source[key]; } return target; }
-
-/* @jsx mdx */
-var _frontmatter = {
-  &quot;date&quot;: &quot;1900-03-15T00:49:23.467Z&quot;,
-  &quot;title&quot;: &quot;dummy&quot;,
-  &quot;tags&quot;: [&quot;dummy1&quot;, &quot;dummy2&quot;],
-  &quot;cover&quot;: &quot;../assets/banner.jpg&quot;
-};
-var layoutProps = {
-  _frontmatter: _frontmatter
-};
-var MDXLayout = &quot;wrapper&quot;;
-return function MDXContent(_ref) {
-  var components = _ref.components,
-      props = _objectWithoutProperties(_ref, [&quot;components&quot;]);
-
-  return mdx(MDXLayout, _extends({}, layoutProps, props, {
-    components: components,
-    mdxType: &quot;MDXLayout&quot;
-  }), mdx(&quot;p&quot;, null, &quot;Dummy&quot;));
 }
 ;
 MDXContent.isMDXComponent = true;</content:encoded></item></channel></rss>
