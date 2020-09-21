@@ -5,7 +5,7 @@ import { useNewest6Posts } from 'src/hooks';
 export const NewPosts: React.FC<{ slug: string }> = ({ slug }) => {
   const posts = useNewest6Posts().filter((post) => post.slug !== slug);
   return (
-    <div className='py-4 px-2 border-b'>
+    <div className='py-4 lg:px-2 border-b'>
       <p className='font-medium'>New posts</p>
       <ul>
         {posts.map((post) => (

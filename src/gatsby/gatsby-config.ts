@@ -9,7 +9,7 @@ const siteUrl = `https://blog.hpprc.dev`;
 const siteMetadata = {
   siteTitle,
   siteTitleAlt: `hpp blog - @hppRC/blog`,
-  siteHeadline: `@hppRC's blog`,
+  siteHeadline: `@hppRC's personal blog`,
   siteUrl,
   siteDescription,
   siteLanguage: `ja`,

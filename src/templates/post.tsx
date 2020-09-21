@@ -39,14 +39,17 @@ const Component: React.FCX<Props> = ({
   <div className='lg:grid lg:grid-cols-5 pb-12 mx-auto w-full'>
     <article className='col-start-2 col-span-3'>
       <PostHeader date={date} tags={tags} title={title} />
-      {fluid && <Img fluid={fluid} className='mb-8' alt='cover image' />}
+      {fluid && <Img fluid={fluid} className='-mx-2 mb-8' alt='cover image' />}
       <section className='custom-post-body'>
         <MDXRenderer>{body}</MDXRenderer>
       </section>
       <PostFooter next={next} previous={previous} pathFromProjectRoot={pathFromProjectRoot} />
     </article>
-    <div className='px-2'>
+    <div className='hidden lg:block lg:pl-4'>
       <SideContents headings={headings} path={path} title={title} />
+    </div>
+    <div className='border-t mt-8 lg:hidden'>
+      <SideContents path={path} title={title} />
     </div>
   </div>
 );

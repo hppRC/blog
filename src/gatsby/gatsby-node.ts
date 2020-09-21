@@ -12,7 +12,7 @@ aspectRatio
 `;
 
 const blogData = `
-excerpt
+excerpt(pruneLength: 400)
 slug
 frontmatter {
   title
@@ -73,7 +73,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions:
 
     tags?.forEach((tag) => {
       if (!postsByTag[tag]) postsByTag[tag] = [];
-      postsByTag[tag].push(node);
+      if (!postsByTag[tag].includes(node)) postsByTag[tag].push(node);
     });
 
     createPage({

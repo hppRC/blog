@@ -35,8 +35,8 @@ export const SEO: React.FC<Props> = ({ title = ``, description = ``, pathname = 
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    url: `${siteUrl}/${pathname || ``}`,
-    image: `${siteUrl}/${image || banner?.src}`,
+    url: `${siteUrl}${pathname || ``}`,
+    image: `${siteUrl}${image || banner?.src}`,
   };
 
   // JSON+LD configurations

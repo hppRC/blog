@@ -24,7 +24,7 @@ export const ShareButtons: React.FC<{ slug: string; title?: string }> = ({ slug,
   const articleUrl = `${siteUrl}/posts/${slug}`;
 
   return (
-    <div className='border-b px-2 py-4'>
+    <div className='border-b lg:px-2 py-4'>
       <p className='font-medium'>Share</p>
       <div className='flex center pt-2 px-2'>
         <FacebookShareButton url={articleUrl} className='mx-1 hover:opacity-50'>
@@ -33,6 +33,7 @@ export const ShareButtons: React.FC<{ slug: string; title?: string }> = ({ slug,
         <LinkedinShareButton url={articleUrl} className='mx-1 hover:opacity-50'>
           <LinkedinIcon size={32} round />
         </LinkedinShareButton>
+        <HatebuButton url={articleUrl} title={title || `blog.hpprc.dev`} className='mx-1 hover:opacity-50' />
         <TwitterShareButton
           title={`${title}\n`}
           via={twitterAccount}
@@ -41,7 +42,6 @@ export const ShareButtons: React.FC<{ slug: string; title?: string }> = ({ slug,
         >
           <TwitterIcon size={32} round />
         </TwitterShareButton>
-        <HatebuButton url={articleUrl} title={title || `hpp blog`} className='mx-1 hover:opacity-50' />
       </div>
     </div>
   );

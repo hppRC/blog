@@ -10,18 +10,23 @@ type Props = {
 };
 
 const Component: React.FC<Props> = ({ tags }) => (
-  <div>
-    <ul>
-      {tags.map((tagName) => (
-        <Link key={tagName} to={`/tags/${tagName}`}>
-          <li key={tagName}>{tagName}</li>
-        </Link>
-      ))}
-    </ul>
-    <div className='px-2'>
+  <section className='lg:grid lg:grid-cols-5 pb-12 mx-auto w-full'>
+    <div className='col-start-2 col-span-3'>
+      <h1 className='py-4 text-2xl lg:text-4xl font-extrabold leading-tight'>Tags</h1>
+      <ul className=''>
+        {tags.map((tagName) => (
+          <Link className='underline whitespace-no-wrap text-indigo-700' key={tagName} to={`/tags/${tagName}`}>
+            <li className='overflow-scroll my-2 list-inside whitespace-no-wrap' key={tagName}>
+              {tagName}
+            </li>
+          </Link>
+        ))}
+      </ul>
+    </div>
+    <div className='lg:pl-4'>
       <SideContents path='/tags' />
     </div>
-  </div>
+  </section>
 );
 
 const Container: React.FC<PageProps> = ({ path }) => {

@@ -23,13 +23,13 @@ export const PostFooter: React.FCX<PostFooterProps> = ({ next, previous, pathFro
         </div>
       </ExternalLink>
     </div>
-    <div className='flex w-full justify-between py-16'>
-      <p className='w-1/2 my-1 text-sm underline'>
+    <div className='lg:flex w-full justify-between lg:py-16'>
+      <p className='lg:w-1/2 py-2 text-sm underline'>
         <Link className='hover:opacity-50' to={`/posts/${next?.slug}`}>
           {next && `← ${next?.frontmatter?.title}`}
         </Link>
       </p>
-      <p className='w-1/2 my-1 text-sm underline text-right'>
+      <p className='lg:w-1/2 py-2 text-sm underline text-right'>
         <Link className='hover:opacity-50' to={`/posts/${previous?.slug}`}>
           {previous && `${previous?.frontmatter?.title} →`}
         </Link>

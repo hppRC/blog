@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArticleCard, SEO, SideContents } from 'src/components';
+import { ArticleCard, SEO } from 'src/components';
 import { useAllPosts } from 'src/hooks';
 
 import type { PageProps } from 'gatsby';
@@ -10,16 +10,13 @@ type Props = {
 
 const Component: React.FC<Props> = ({ posts }) => (
   <div className='lg:grid lg:grid-cols-5 pb-12 mx-auto w-full'>
-    <ul className='col-start-2 col-span-3'>
+    <ul className='lg:col-start-2 lg:col-span-3'>
       {posts.map((post) => (
-        <li className='my-4 border-b border-gray-300' key={post.slug}>
+        <li className='my-2 lg:my-4 border-b border-gray-300' key={post.slug}>
           <ArticleCard post={post} />
         </li>
       ))}
     </ul>
-    <div className='px-2'>
-      <SideContents path='/' />
-    </div>
   </div>
 );
 

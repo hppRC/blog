@@ -16,7 +16,7 @@ type Props = {
 export const TableOfContents: React.FC<Props> = ({ headings, path }) => {
   slugger.reset();
   return (
-    <div className='border-b py-4 px-2'>
+    <div className='border-b px-2'>
       <p className='font-medium'>Headdings</p>
       <ul className=''>
         {headings?.map(({ value, depth }) => (
