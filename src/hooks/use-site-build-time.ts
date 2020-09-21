@@ -10,7 +10,7 @@ export const useSiteBuildTime = (): string => {
   const { site } = useStaticQuery<SiteBuildtimeQuery>(graphql`
     query {
       site {
-        buildTime(formatString: "YYYY-MM-DD")
+        buildTime(formatString: "YYYY/MM/DD")
       }
     }
   `);

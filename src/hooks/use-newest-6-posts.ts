@@ -2,21 +2,21 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 type AllPostsQuery = {
   allMdx: {
-    nodes: MdxNode[];
+    nodes: Post[];
   };
 };
 
-export const useNewest6Posts = (): MdxNode[] => {
+export const useNewest6Posts = (): Post[] => {
   const { allMdx } = useStaticQuery<AllPostsQuery>(graphql`
     query {
-      allMdx(limit: 6, sort: { order: DESC, fields: [frontmatter___date] }) {
+      allMdx(filter: { slug: { ne: "dummy" } }, limit: 6, sort: { order: DESC, fields: [frontmatter___date] }) {
         nodes {
           body
-          excerpt(pruneLength: 100)
+          excerpt(pruneLength: 400)
+          slug
           frontmatter {
             title
-            date(formatString: "YYYY-MM-DD")
-            slug
+            date(formatString: "YYYY/MM/DD")
             tags
             cover {
               childImageSharp {
