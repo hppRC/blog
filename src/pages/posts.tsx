@@ -31,7 +31,7 @@ const Container: React.FC<PageProps> = ({ path }) => {
   const posts = useAllPosts();
   return (
     <>
-      <SEO title='posts' pathname={path} />
+      <SEO title='Posts' pathname={path} />
       <Component posts={posts} path={path} />
     </>
   );
