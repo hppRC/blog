@@ -1,10 +1,11 @@
 ---
-slug: dummy
-date: 2020-03-15T00:49:23.467Z
+date: 0000-03-15T00:49:23.467Z
 title: dummy
 tags:
-  - test-tag1
-  - test-tag2
+  - dummy1
+  - dummy2
 cover: ../assets/banner.jpg
 ---
 Dummy
+
+
