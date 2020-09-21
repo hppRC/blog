@@ -1,12 +1,15 @@
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
-import { PostFooterContents, SEO, SideContents } from 'src/components';
+import { SEO, SideContents } from 'src/components';
 
+import { PostFooter } from './post-footer';
+import { PostHeader } from './post-header';
+
+// eslint-disable-next-line import/order
 import type { FluidObject } from 'gatsby-image';
 
-type ContainerProps = { path: string; data: PostData; pageContext: PostPageContext };
 type Props = {
   body: string;
   headings: { value: string; depth: number }[];
@@ -14,69 +17,73 @@ type Props = {
   date?: string;
   tags?: string[];
   fluid?: FluidObject;
-  previous?: MdxNode;
-  next?: MdxNode;
+  previous?: Post;
+  next?: Post;
   slug: string;
   path: string;
+  pathFromProjectRoot: string;
 };
 
-const Component: React.FCX<Props> = ({ body, fluid, headings, path, next, date, previous, title, tags }) => (
-  <article className='lg:grid lg:grid-cols-5 pb-12 mx-auto w-full'>
-    <div className='col-start-2 col-span-3'>
-      <div className='py-2'>
-        <h1 className='text-4xl font-extrabold'>{title}</h1>
-        <ul className='flex'>
-          {tags?.map((tagName) => (
-            <Link
-              key={tagName}
-              className='block rounded border border-gray-900 mr-2 hover:bg-gray-200'
-              to={`/tags/${tagName}`}
-            >
-              <li className='inline-block text-xs px-2 py-1 font-bold'>{tagName}</li>
-            </Link>
-          ))}
-        </ul>
-        <p className='pt-2'>{date}</p>
-      </div>
+const Component: React.FCX<Props> = ({
+  body,
+  fluid,
+  headings,
+  path,
+  next,
+  date,
+  previous,
+  title,
+  tags,
+  pathFromProjectRoot,
+}) => (
+  <div className='lg:grid lg:grid-cols-5 pb-12 mx-auto w-full'>
+    <article className='col-start-2 col-span-3'>
+      <PostHeader date={date} tags={tags} title={title} />
       {fluid && <Img fluid={fluid} className='mb-8' alt='cover image' />}
-      <MDXRenderer>{body}</MDXRenderer>
-      <PostFooterContents next={next} previous={previous} />
-    </div>
+      <section className='custom-post-body'>
+        <MDXRenderer>{body}</MDXRenderer>
+      </section>
+      <PostFooter next={next} previous={previous} pathFromProjectRoot={pathFromProjectRoot} />
+    </article>
     <div className='px-2'>
       <SideContents headings={headings} path={path} title={title} />
     </div>
-  </article>
+  </div>
 );
 
-const Container: React.FCX<ContainerProps> = ({ data, pageContext, path }) => {
+type PageProps = { path: string; data: PostData; pageContext: PostPageContext };
+const Container: React.FCX<PageProps> = ({ data, pageContext, path }) => {
   // while reloading page, data.mdx may be null because Gatsby's page query is asynchronous.
   if (!data.mdx) return <></>;
 
-  const { body, headings, frontmatter } = data.mdx;
+  const { body, headings, frontmatter, fileAbsolutePath } = data.mdx;
   const { title, date, tags, cover } = frontmatter;
   const fluid = cover?.childImageSharp?.fluid;
   const { previous, next, slug } = pageContext;
+  const pathFromProjectRoot = fileAbsolutePath.split(`/blog/`).pop() || ``;
 
   return (
     <>
       <SEO title={title} pathname={path} image={fluid?.src} />
-      <Component {...{ path, body, headings, title, date, tags, fluid, previous, next, slug }} />
+      <Component {...{ path, body, headings, title, date, tags, fluid, previous, next, slug, pathFromProjectRoot }} />
     </>
   );
 };
 
 export const query = graphql`
   query($slug: String!) {
-    mdx(frontmatter: { slug: { eq: $slug } }) {
+    mdx(slug: { eq: $slug }) {
       body
-      excerpt
+      excerpt(pruneLength: 400)
+      fileAbsolutePath
+      slug
       headings {
         value
         depth
       }
       frontmatter {
         title
-        date(formatString: "YYYY-MM-DD")
+        date(formatString: "YYYY/MM/DD")
         tags
         cover {
           childImageSharp {

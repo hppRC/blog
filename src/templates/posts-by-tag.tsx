@@ -4,25 +4,21 @@ import { SEO } from 'src/components';
 
 type ContainerProps = { pageContext: PostsByTagPageContext; path: string };
 type Props = {
-  posts: { frontmatter: Frontmatter; excerpt: string }[];
+  posts: Post[];
   tagName: string;
 };
 
 const Component: React.FCX<Props> = ({ className, tagName, posts }) => (
   <main className={className}>
     <ul>
-      {posts.map(({ excerpt, frontmatter }) => {
-        const { slug } = frontmatter;
-        const fluid = frontmatter.cover?.childImageSharp.fluid;
-        return (
-          <Link key={slug} to={`/posts/${slug}`}>
-            <li>
-              {tagName}
-              {excerpt}
-            </li>
-          </Link>
-        );
-      })}
+      {posts.map(({ excerpt, slug }) => (
+        <Link key={slug} to={`/posts/${slug}`}>
+          <li>
+            {tagName}
+            {excerpt}
+          </li>
+        </Link>
+      ))}
     </ul>
   </main>
 );
