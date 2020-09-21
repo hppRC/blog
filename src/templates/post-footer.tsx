@@ -6,13 +6,13 @@ import { ExternalLink } from 'src/components';
 type PostFooterProps = {
   next?: Post;
   previous?: Post;
-  pathFromProjectRoot: string;
+  slug: string;
 };
 
-export const PostFooter: React.FCX<PostFooterProps> = ({ next, previous, pathFromProjectRoot }) => (
+export const PostFooter: React.FCX<PostFooterProps> = ({ next, previous, slug }) => (
   <div>
     <div className='py-8'>
-      <ExternalLink href={`https://github.com/hppRC/blog/tree/master/${pathFromProjectRoot}`} className=''>
+      <ExternalLink href={`https://github.com/hppRC/blog/blob/master/contents/posts/${slug}.md`} className=''>
         <div className='inline-block underline'>
           <div className='flex hover:opacity-50'>
             <i className='mr-1'>

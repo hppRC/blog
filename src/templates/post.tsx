@@ -24,18 +24,7 @@ type Props = {
   pathFromProjectRoot: string;
 };
 
-const Component: React.FCX<Props> = ({
-  body,
-  fluid,
-  headings,
-  path,
-  next,
-  date,
-  previous,
-  title,
-  tags,
-  pathFromProjectRoot,
-}) => (
+const Component: React.FCX<Props> = ({ body, fluid, headings, path, next, date, previous, title, tags, slug }) => (
   <div className='lg:grid lg:grid-cols-5 pb-12 mx-auto w-full'>
     <article className='col-start-2 col-span-3'>
       <PostHeader date={date} tags={tags} title={title} />
@@ -43,7 +32,7 @@ const Component: React.FCX<Props> = ({
       <section className='custom-post-body'>
         <MDXRenderer>{body}</MDXRenderer>
       </section>
-      <PostFooter next={next} previous={previous} pathFromProjectRoot={pathFromProjectRoot} />
+      <PostFooter next={next} previous={previous} slug={slug} />
     </article>
     <div className='hidden lg:block lg:pl-4'>
       <SideContents headings={headings} path={path} title={title} />
@@ -59,16 +48,15 @@ const Container: React.FCX<PageProps> = ({ data, pageContext, path }) => {
   // while reloading page, data.mdx may be null because Gatsby's page query is asynchronous.
   if (!data.mdx) return <></>;
 
-  const { body, headings, frontmatter, fileAbsolutePath } = data.mdx;
+  const { body, headings, frontmatter } = data.mdx;
   const { title, date, tags, cover } = frontmatter;
   const fluid = cover?.childImageSharp?.fluid;
   const { previous, next, slug } = pageContext;
-  const pathFromProjectRoot = fileAbsolutePath.split(`/blog/`).pop() || ``;
 
   return (
     <>
       <SEO title={title} pathname={path} image={fluid?.src} />
-      <Component {...{ path, body, headings, title, date, tags, fluid, previous, next, slug, pathFromProjectRoot }} />
+      <Component {...{ path, body, headings, title, date, tags, fluid, previous, next, slug, slug }} />
     </>
   );
 };
