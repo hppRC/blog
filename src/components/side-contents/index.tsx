@@ -18,7 +18,7 @@ type Props = {
 export const SideContents: React.FCX<Props> = ({ headings, path, title }) => {
   const slug = path.split(`/`).pop() || ``;
   return (
-    <div className='sticky top-0 pt-4'>
+    <div className='sticky top-0 pt-8'>
       {headings && <TableOfContents headings={headings} path={path} title={title} />}
       <NewPosts slug={slug} />
       <ShareButtons path={path} title={title} />

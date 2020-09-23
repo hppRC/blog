@@ -10,9 +10,9 @@ type Props = {
 };
 
 const Component: React.FC<Props> = ({ tags }) => (
-  <section className='lg:grid lg:grid-cols-5 pb-12 mx-auto w-full'>
+  <section className='px-4 sm:px-16 lg:px-0 lg:grid lg:grid-cols-5 pb-12 mx-auto w-full'>
     <div className='col-start-2 col-span-3'>
-      <h1 className='py-4 text-2xl lg:text-4xl font-extrabold leading-tight'>Tags</h1>
+      <h1 className='py-4 text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight'>Tags</h1>
       <ul className=''>
         {tags.map((tagName) => (
           <Link className='underline whitespace-no-wrap text-indigo-700' key={tagName} to={`/tags/${tagName}`}>

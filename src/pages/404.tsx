@@ -9,7 +9,7 @@ type Props = {
 };
 
 const Component: React.FC<Props> = ({ path }) => (
-  <div className='lg:grid lg:grid-cols-5 pb-12 mx-auto w-full'>
+  <div className='px-4 sm:px-16 lg:px-0 lg:grid lg:grid-cols-5 pb-12 mx-auto w-full'>
     <div className='col-start-2 col-span-3'>
       <h1 className='py-4 text-2xl lg:text-4xl font-extrabold leading-tight'>404 NotFound</h1>
       <ul>
