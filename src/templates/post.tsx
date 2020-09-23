@@ -27,7 +27,7 @@ const Component: React.FCX<Props> = ({ body, fluid, headings, path, next, date, 
   <div className='lg:grid lg:grid-cols-5 pb-12 mx-auto w-full'>
     <article className='col-start-2 col-span-3'>
       <PostHeader date={date} tags={tags} title={title} />
-      {fluid && <Img fluid={fluid} className='-mx-2 mb-8' alt='cover image' />}
+      {fluid && <Img fluid={fluid} className='-mx-2 lg:mx-0 mb-8' alt='cover image' />}
       <section className='custom-post-body'>
         <MDXRenderer>{body}</MDXRenderer>
       </section>

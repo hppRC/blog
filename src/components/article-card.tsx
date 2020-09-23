@@ -9,7 +9,7 @@ export const ArticleCard: React.FC<Props> = ({ post: { excerpt, frontmatter, slu
       <h2 className='font-bold inline-block lg:py-2 text-2xl lg:text-3xl hover:opacity-50'>{frontmatter?.title}</h2>
     </Link>
     <div className='flex py-2'>
-      <p className='font-medium mr-2'>{frontmatter?.date}</p>
+      <p className='font-medium mr-2 whitespace-no-wrap'>{frontmatter?.date}</p>
       <ul className='flex overflow-scroll'>
         {Array.from(new Set(frontmatter.tags)).map((tagName) => (
           <Link
