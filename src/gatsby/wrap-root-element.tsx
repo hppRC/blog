@@ -23,7 +23,7 @@ export const wrapRootElement = ({ element }: { element: React.FC }): JSX.Element
         ),
         // eslint-disable-next-line jsx-a11y/anchor-has-content
         a: (props) => <a {...props} className='underline font-bold text-indigo-500' />,
-        p: (props) => <p {...props} className='leading-relaxed mb-8' />,
+        p: (props) => <p {...props} className='mb-8 leading-loose' />,
       }}
     >
       <Layout>{element}</Layout>
