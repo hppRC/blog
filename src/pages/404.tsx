@@ -14,42 +14,54 @@ const Component: React.FC<Props> = ({ path }) => (
       <h1 className='py-4 text-2xl lg:text-4xl font-extrabold leading-tight'>404 NotFound</h1>
       <ul>
         <li className='py-2'>
-          <Link className='underline hover:opacity-50' to='/'>
+          <Link className='underline text-indigo-600 font-bold hover:opacity-50' to='/'>
             Home
           </Link>
         </li>
         <li className='py-2'>
-          <Link className='underline hover:opacity-50' to='/posts'>
+          <Link className='underline text-indigo-600 font-bold hover:opacity-50' to='/posts'>
             Posts
           </Link>
         </li>
         <li className='py-2'>
-          <Link className='underline hover:opacity-50' to='/tags'>
+          <Link className='underline text-indigo-600 font-bold hover:opacity-50' to='/tags'>
             Tags
           </Link>
         </li>
         <li className='py-2'>
-          <ExternalLink className='underline hover:opacity-50' href='https://blog.hpprc.dev/rss.xml'>
+          <ExternalLink
+            className='underline text-indigo-600 font-bold hover:opacity-50'
+            href='https://blog.hpprc.dev/rss.xml'
+          >
             RSS
           </ExternalLink>
         </li>
         <li className='py-2'>
-          <ExternalLink className='underline hover:opacity-50' href='https://hpprc.dev'>
+          <ExternalLink className='underline text-indigo-600 font-bold hover:opacity-50' href='https://hpprc.dev'>
             Profile page
           </ExternalLink>
         </li>
         <li className='py-2'>
-          <ExternalLink className='underline hover:opacity-50' href='https://generative-react.hpprc.com'>
+          <ExternalLink
+            className='underline text-indigo-600 font-bold hover:opacity-50'
+            href='https://generative-react.hpprc.com'
+          >
             Artworks
           </ExternalLink>
         </li>
         <li className='py-2'>
-          <ExternalLink className='underline hover:opacity-50' href='https://twitter.com/hpp_ricecake'>
+          <ExternalLink
+            className='underline text-indigo-600 font-bold hover:opacity-50'
+            href='https://twitter.com/hpp_ricecake'
+          >
             Twitter: @hpp_ricecake
           </ExternalLink>
         </li>
         <li className='py-2'>
-          <ExternalLink className='underline hover:opacity-50' href='https://github.com/hppRC'>
+          <ExternalLink
+            className='underline text-indigo-600 font-bold hover:opacity-50'
+            href='https://github.com/hppRC'
+          >
             GitHub: hppRC
           </ExternalLink>
         </li>

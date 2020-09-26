@@ -25,7 +25,7 @@ export const ArticleCard: React.FC<Props> = ({ post: { excerpt, frontmatter, slu
     <p className='hidden lg:block py-2 leading-relaxed'>{excerpt}</p>
     <p className='hidden sm:block lg:hidden py-2 leading-relaxed'>{`${excerpt.slice(0, 200)}...`}</p>
     <p className='sm:hidden py-2 leading-relaxed'>{`${excerpt.slice(0, 100)}...`}</p>
-    <div className='text-right py-2 lg:px-2'>
+    <div className='text-right mt-4 py-2 lg:px-2'>
       <Link className='hover:opacity-50 rounded p-3 bg-gray-900 text-white' to={`/posts/${slug}`}>
         view more
       </Link>

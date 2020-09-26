@@ -15,11 +15,15 @@ const Component: React.FC<Props> = ({ tags }) => (
       <h1 className='py-4 text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight'>Tags</h1>
       <ul className=''>
         {tags.map((tagName) => (
-          <Link className='underline whitespace-no-wrap text-indigo-700' key={tagName} to={`/tags/${tagName}`}>
-            <li className='overflow-scroll my-2 list-inside whitespace-no-wrap' key={tagName}>
+          <li className='py-2 overflow-scroll' key={tagName}>
+            <Link
+              className='whitespace-no-wrap underline text-indigo-600 font-bold hover:opacity-50'
+              key={tagName}
+              to={`/tags/${tagName}`}
+            >
               {tagName}
-            </li>
-          </Link>
+            </Link>
+          </li>
         ))}
       </ul>
     </div>
