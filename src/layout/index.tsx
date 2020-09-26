@@ -7,7 +7,7 @@ import { Header } from './header';
 export const Layout: React.FC = ({ children }) => (
   <Div100vh className='flex flex-col'>
     <Header />
-    <main className='flex-1 max-w-screen-xl w-full mx-auto px-2'>{children}</main>
+    <main className='flex-grow max-w-screen-xl w-full mx-auto px-2'>{children}</main>
     <Footer />
   </Div100vh>
 );
