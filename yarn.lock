@@ -13705,6 +13705,11 @@ react-dev-utils@^4.2.3:
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
+react-div-100vh@^0.5.5:
+  version "0.5.5"
+  resolved "https://registry.yarnpkg.com/react-div-100vh/-/react-div-100vh-0.5.5.tgz#6e36c420a21b6730c923de52382ab3775d745086"
+  integrity sha512-i6k9kmv0TylzpYC3G8BaE51cDRcIYwrNiMwjDDj/glDeW5pgRfBoiFJufRjJdTy+AuoTy/gebheOQmAzr4iWQg==
+
 react-dom@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
