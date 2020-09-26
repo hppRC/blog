@@ -9,7 +9,7 @@ type PostHeaderProps = {
 
 export const PostHeader: React.FC<PostHeaderProps> = ({ title, tags, date }) => (
   <div className='pb-4'>
-    <h1 className='py-4 text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight'>{title}</h1>
+    <h1 className='py-4 text-2xl sm:text-3xl lg:text-4xl font-extrabold'>{title}</h1>
     <ul className='flex overflow-scroll'>
       {Array.from(new Set(tags)).map((tagName) => (
         <Link
