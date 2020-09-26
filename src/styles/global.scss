@@ -12,6 +12,15 @@ html {
   }
 }
 
+#footer {
+  min-height: 5rem;
+}
+
+@media screen and (max-width: 640px) {
+  #footer {
+    min-height: 4rem;
+  }
+}
 
 
 .custom-hatebu-button {
