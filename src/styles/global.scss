@@ -1,9 +1,8 @@
-/* reffer to this article: https://qiita.com/RinoTsuka/items/b30e03ce10aa38ac2a10#_reference-aab4ed4b3d365dfead76 */
 html {
 
+  // avoid slight content shift
+  height: initial;
   body {
-    // avoid slight content shift
-    overflow-anchor: none;
     overflow-x: hidden;
     /*overscroll-behavior-y: none;*/
 
@@ -15,12 +14,10 @@ html {
 }
 
 #gatsby-focus-wrapper {
-  display: flex;
-  flex-flow: column;
   min-height: calc(100vh - 9rem);
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 640px) {
   #gatsby-focus-wrapper {
     min-height: calc(100vh - 7rem);
   }
