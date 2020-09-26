@@ -58,7 +58,13 @@ const TwitterIcon: React.FC = () => (
 export const Header: React.FC = () => (
   <header className='top-0 border-b w-full h-12 lg:h-16 lg:px-4'>
     <nav className='flex pl-2 lg:px-0 h-full max-w-screen-xl mx-auto items-center justify-between'>
-      <Link to='/' className=''>
+      <Link
+        to='/'
+        className=''
+        onClick={() => {
+          window.scrollTo(0, 0);
+        }}
+      >
         <h1 className='hidden xs:block font-extrabold text-2xl lg:text-3xl'>blog.hpprc.dev</h1>
         <h1 className='xs:hidden font-extrabold text-2xl lg:text-3xl'>hpprc.dev</h1>
       </Link>

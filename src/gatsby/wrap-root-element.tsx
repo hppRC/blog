@@ -1,10 +1,11 @@
+import type { WrapRootElementBrowserArgs } from 'gatsby';
 /* eslint-disable jsx-a11y/heading-has-content */
 import React from 'react';
 import { Layout } from 'src/layout';
 
 import { MDXProvider } from '@mdx-js/react';
 
-export const wrapRootElement = ({ element }: { element: React.FC }): JSX.Element => {
+export const wrapRootElement: React.FC<WrapRootElementBrowserArgs> = ({ element }) => {
   if (typeof window !== `undefined`) {
     // eslint-disable-next-line global-require
     require(`smooth-scroll`)(`a[href*="#"]`);
