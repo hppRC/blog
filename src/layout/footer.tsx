@@ -3,7 +3,7 @@ import { FaGithub } from 'react-icons/fa';
 import { ExternalLink } from 'src/components';
 
 export const Footer: React.FC = () => (
-  <footer className='flex flex-col items-center justify-center w-full h-20 sm:h-24 text-center border-t border-grey p-4 text-sm lg:text-base'>
+  <footer className='flex flex-col items-center justify-center w-full h-16 sm:h-24 text-center border-t border-grey p-4 text-sm lg:text-base'>
     <div>This site uses Google Analytics.</div>
     <div className='flex items-center'>
       ©2020
