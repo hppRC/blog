@@ -11,7 +11,9 @@ type Props = {
 const Component: React.FC<Props> = ({ path }) => (
   <div className='px-4 sm:px-16 lg:px-0 lg:grid lg:grid-cols-5 pb-12 mx-auto w-full'>
     <div className='col-start-2 col-span-3'>
-      <h1 className='py-4 text-2xl lg:text-4xl font-extrabold leading-tight'>404 NotFound</h1>
+      <h1 className='pt-4 mb-8 lg:py-4 text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight break-all'>
+        404 NotFound
+      </h1>
       <ul>
         <li className='py-2'>
           <Link className='underline text-indigo-600 font-bold hover:opacity-50' to='/'>
