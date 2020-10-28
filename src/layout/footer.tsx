@@ -13,7 +13,7 @@ export const Footer: React.FC = () => (
       <ExternalLink className='underline hover:opacity-50 mx-1' href='https://twitter.com/hpp_ricecake'>
         hpp_ricecake
       </ExternalLink>
-      <ExternalLink className='underline hover:opacity-50 mr-1' href='https://github.com/hppRC'>
+      <ExternalLink className='underline hover:opacity-50 mr-1' href='https://github.com/hppRC' aria-label='GitHub'>
         <i>
           <FaGithub className='text-gray-800' fontSize='18' />
         </i>

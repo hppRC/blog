@@ -166,6 +166,9 @@ const SEOplugins = [
       display: `standalone`,
       // path from root directory
       icon: `contents/assets/icon.png`,
+      icon_options: {
+        purpose: `any maskable`,
+      },
     },
   },
   `gatsby-plugin-offline`,

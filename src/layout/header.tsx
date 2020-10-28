@@ -32,7 +32,7 @@ const RssIcon: React.FC = () => (
 );
 
 const DocumentIcon: React.FC = () => (
-  <ExternalLink href='https://hpprc.dev'>
+  <ExternalLink href='https://hpprc.dev' aria-label='ProfileSite'>
     <i>
       <IoMdDocument fontSize='34' />
     </i>
@@ -40,7 +40,7 @@ const DocumentIcon: React.FC = () => (
 );
 
 const GitHubIcon = () => (
-  <ExternalLink href='https://github.com/hppRC'>
+  <ExternalLink href='https://github.com/hppRC' aria-label='GitHub'>
     <i>
       <FaGithub fontSize='32' />
     </i>
@@ -48,7 +48,7 @@ const GitHubIcon = () => (
 );
 
 const TwitterIcon: React.FC = () => (
-  <ExternalLink href='https://twitter.com/hpp_ricecake'>
+  <ExternalLink href='https://twitter.com/hpp_ricecake' aria-label='Twitter'>
     <i>
       <FaTwitter fontSize='32' />
     </i>
