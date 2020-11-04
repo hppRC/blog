@@ -39,7 +39,7 @@
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
     "gatsby-remark-autolink-headers": "^2.3.2",
     "gatsby-remark-code-titles": "^1.1.0",
-    "gatsby-remark-embedder": "^3.0.0",
+    "gatsby-remark-embedder": "^4.0.0",
     "gatsby-remark-emojis": "^0.4.3",
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-graphviz": "^1.3.11",
