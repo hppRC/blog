@@ -1,21 +1,22 @@
+
 {
-  "name": "hpp-blog",
   "version": "0.0.1",
   "main": "index.js",
-  "repository": "ssh://git@github.com/hppRC/blog.git",
-  "author": "hppRC <hpp.ricecake@gmail.com>",
+  "name": "hpp-blog",
   "license": "MIT",
+  "repository": "ssh://git@github.com/hppRC/blog.git",
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx,tsx}",
-    "start": "yarn dev",
-    "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "type-check": "tsc --noEmit",
+    "dev": "gatsby develop",
+    "fix": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .eslintignore . --fix",
+    "format": "prettier --write src/**/*.{js,jsx,tsx}",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .eslintignore .",
-    "fix": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .eslintignore . --fix"
+    "serve": "gatsby serve",
+    "start": "yarn dev",
+    "type-check": "tsc --noEmit"
   },
+  "author": "hppRC <hpp.ricecake@gmail.com>",
   "dependencies": {
     "@mdx-js/mdx": "^1.6.1",
     "@mdx-js/react": "^1.6.1",

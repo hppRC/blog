@@ -1,5 +1,3 @@
-import tailwindcss from 'tailwindcss';
-
 const tailwindConfig = require(`../../tailwind.config`);
 
 const siteTitle = `hpp blog`;
