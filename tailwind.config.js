@@ -1,16 +1,21 @@
 module.exports = {
-  purge: [`./src/**/*.js`, `./src/**/*.jsx`, `./src/**/*.ts`, `./src/**/*.tsx`],
+  future: {
+    purgeLayersByDefault: true,
+    removeDeprecatedGapUtilities: true,
+    defaultLineHeights: true,
+    standardFontWeights: true,
+  },
+  purge: {
+    layers: [`utilities`],
+    content: [`./src/**/*.html`, `./src/**/*.tsx`, `./src/**/*.jsx`, `./src/**/*.scss`, `./src/**/*.css`],
+  },
+  variants: {},
+  plugins: [],
   theme: {
     extend: {
       screens: {
         xs: `320px`,
       },
     },
-  },
-  variants: {},
-  plugins: [],
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
   },
 };

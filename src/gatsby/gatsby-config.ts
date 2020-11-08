@@ -159,7 +159,6 @@ const SEOplugins = [
       name: siteTitle,
       short_name: siteTitle,
       description: siteDescription,
-      Scope: `/`,
       start_url: `/?utm_source=homescreen`,
       background_color: `#fff`,
       theme_color: `#03030f`,
@@ -186,7 +185,7 @@ export default {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        postCssPlugins: [tailwindcss, tailwindConfig],
+        postCssPlugins: [tailwindConfig],
       },
     },
     {
