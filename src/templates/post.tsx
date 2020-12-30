@@ -27,7 +27,7 @@ const Component: React.FCX<Props> = ({ body, fluid, headings, path, next, date, 
   <div className='px-4 sm:px-16 lg:px-0 lg:grid lg:grid-cols-5 pb-12 mx-auto w-full'>
     <article className='col-start-2 col-span-3'>
       <PostHeader date={date} tags={tags} title={title} />
-      {fluid && <Img fluid={fluid} className='-mx-6 lg:mx-0 mb-8' alt='cover image' />}
+      {fluid ? <Img fluid={fluid} className='-mx-6 lg:mx-0 mb-8' alt='cover image' /> : <div className='h-40 w-full' />}
       <section className='custom-post-body'>
         <MDXRenderer>{body}</MDXRenderer>
       </section>
@@ -44,7 +44,7 @@ const Component: React.FCX<Props> = ({ body, fluid, headings, path, next, date, 
 
 type PageProps = { path: string; data: PostData; pageContext: PostPageContext };
 const Container: React.FCX<PageProps> = ({ data, pageContext, path }) => {
-  // while reloading page, data.mdx may be null because Gatsby's page query is asynchronous.
+  // while reloading page, data.mdx can be null because Gatsby's page query is asynchronous.
   if (!data.mdx) return <></>;
 
   const { body, headings, frontmatter } = data.mdx;
