@@ -27,6 +27,7 @@ export const wrapRootElement: React.FC<WrapRootElementBrowserArgs> = ({ element 
         p: (props) => <p {...props} className='mb-8 leading-loose' />,
       }}
     >
+      <script async src='//cdn.iframe.ly/embed.js' charSet='utf-8' />
       <Layout>{element}</Layout>
     </MDXProvider>
   );

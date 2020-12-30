@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import React from 'react';
+import React, { memo } from 'react';
 import { SEO, SideContents } from 'src/components';
 
 import { PostFooter } from './post-footer';
@@ -23,14 +23,18 @@ type Props = {
   path: string;
 };
 
-const Component: React.FCX<Props> = ({ body, fluid, headings, path, next, date, previous, title, tags, slug }) => (
+const Body = memo(({ body }: { body: string }) => (
+  <section className='custom-post-body'>
+    <MDXRenderer>{body}</MDXRenderer>
+  </section>
+));
+
+const Component: React.FCX<Props> = memo(({ body, fluid, headings, path, next, date, previous, title, tags, slug }) => (
   <div className='px-4 sm:px-16 lg:px-0 lg:grid lg:grid-cols-5 pb-12 mx-auto w-full'>
     <article className='col-start-2 col-span-3'>
       <PostHeader date={date} tags={tags} title={title} />
       {fluid ? <Img fluid={fluid} className='-mx-6 lg:mx-0 mb-8' alt='cover image' /> : <div className='h-40 w-full' />}
-      <section className='custom-post-body'>
-        <MDXRenderer>{body}</MDXRenderer>
-      </section>
+      <Body body={body} />
       <PostFooter next={next} previous={previous} slug={slug} />
     </article>
     <div className='hidden lg:block lg:pl-4'>
@@ -40,7 +44,7 @@ const Component: React.FCX<Props> = ({ body, fluid, headings, path, next, date, 
       <SideContents path={path} title={title || slug} />
     </div>
   </div>
-);
+));
 
 type PageProps = { path: string; data: PostData; pageContext: PostPageContext };
 const Container: React.FCX<PageProps> = ({ data, pageContext, path }) => {

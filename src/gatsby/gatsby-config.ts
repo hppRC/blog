@@ -123,8 +123,8 @@ const mdxPlugins = {
           noInlineHighlight: false,
         },
       },
-      `gatsby-remark-embedder`,
     ],
+    plugins: [`@raae/gatsby-remark-oembed`],
   },
 };
 

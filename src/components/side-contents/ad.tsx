@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
-import React from 'react';
+import React, { memo } from 'react';
 
 const YOUTUBE_URL_LIST = [
   `https://www.youtube.com/embed/Ek840SVER7c`, // チューリングラブ / 葛葉, ひまちゃん
@@ -30,7 +30,7 @@ const YouTubeIFrame = () => (
 //   </div>
 // );
 
-export const Ad: React.FC = () => (
+export const Ad: React.FC = memo(() => (
   <div className='lg:px-2 py-4'>
     <p className='font-medium pb-4'>Likes</p>
     <div className='flex justify-center'>
@@ -38,4 +38,4 @@ export const Ad: React.FC = () => (
       <YouTubeIFrame />
     </div>
   </div>
-);
+));

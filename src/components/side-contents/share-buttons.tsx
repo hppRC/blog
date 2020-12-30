@@ -1,10 +1,12 @@
-/* eslint-disable indent */
-/* eslint-disable prettier/prettier */
+import React, { memo } from 'react';
 
-import React from 'react';
 import {
-    FacebookIcon, FacebookShareButton, LinkedinIcon, LinkedinShareButton, TwitterIcon,
-    TwitterShareButton
+  FacebookIcon,
+  FacebookShareButton,
+  LinkedinIcon,
+  LinkedinShareButton,
+  TwitterIcon,
+  TwitterShareButton,
 } from 'react-share';
 import { ExternalLink } from 'src/components';
 import { useSiteMetadata } from 'src/hooks';
@@ -17,7 +19,7 @@ const HatebuButton: React.FCX<HatebuProps> = ({ className, url, title }) => (
   </button>
 );
 
-export const ShareButtons: React.FC<{ title?: string, path?:string }> = ({ path, title }) => {
+export const ShareButtons: React.FC<{ title?: string; path?: string }> = memo(({ path, title }) => {
   const { siteUrl, social } = useSiteMetadata();
   const twitter = social?.twitter || `https://twitter.com/hpp_ricecake`;
   const twitterAccount = twitter.split(`/`).pop(); // @hpp_ricecaeke -> hpp_ricecake
@@ -45,4 +47,4 @@ export const ShareButtons: React.FC<{ title?: string, path?:string }> = ({ path,
       </div>
     </div>
   );
-};
+});
