@@ -2,6 +2,7 @@ import type { WrapRootElementBrowserArgs } from 'gatsby';
 /* eslint-disable jsx-a11y/heading-has-content */
 import React from 'react';
 import { Layout } from 'src/layout';
+import Helmet from 'react-helmet';
 
 import { MDXProvider } from '@mdx-js/react';
 
@@ -27,6 +28,9 @@ export const wrapRootElement: React.FC<WrapRootElementBrowserArgs> = ({ element 
         p: (props) => <p {...props} className='mb-8 leading-loose' />,
       }}
     >
+      <Helmet>
+        <script defer src='//cdn.iframe.ly/embed.js' charSet='utf-8' />
+      </Helmet>
       <Layout>{element}</Layout>
     </MDXProvider>
   );

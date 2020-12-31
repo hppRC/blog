@@ -1,8 +1,8 @@
 import { Link } from 'gatsby';
-import React from 'react';
+import React, { memo } from 'react';
 import { useNewest6Posts } from 'src/hooks';
 
-export const NewPosts: React.FC<{ slug: string }> = ({ slug }) => {
+export const NewPosts: React.FC<{ slug: string }> = memo(({ slug }) => {
   const posts = useNewest6Posts().filter((post) => post.slug !== slug);
   return (
     <div className='py-4 lg:px-2 border-b'>
@@ -18,4 +18,4 @@ export const NewPosts: React.FC<{ slug: string }> = ({ slug }) => {
       </ul>
     </div>
   );
-};
+});

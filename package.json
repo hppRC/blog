@@ -19,7 +19,6 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.1",
     "@mdx-js/react": "^1.6.1",
-    "@pauliescanlon/gatsby-mdx-embed": "^0.0.29",
     "@raae/gatsby-remark-oembed": "^0.1.1",
     "@reach/router": "^1.3.4",
     "gatsby": "^2.24.90",
@@ -41,7 +40,6 @@
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
     "gatsby-remark-autolink-headers": "^2.3.2",
     "gatsby-remark-code-titles": "^1.1.0",
-    "gatsby-remark-embedder": "^3.0.0",
     "gatsby-remark-emojis": "^0.4.3",
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-graphviz": "^1.3.11",

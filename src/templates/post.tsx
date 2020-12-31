@@ -35,7 +35,7 @@ const Component: React.FCX<Props> = memo(({ body, fluid, headings, path, next, d
   <div className='px-4 sm:px-16 lg:px-0 lg:grid lg:grid-cols-5 pb-12 mx-auto w-full'>
     <article className='col-start-2 col-span-3'>
       <PostHeader date={date} tags={tags} title={title} />
-      {fluid && <Img fluid={fluid} className='-mx-6 lg:mx-0 mb-8' alt='cover image' />}
+      {fluid && <Img fluid={fluid} className='-mx-6 lg:mx-0 mb-8 rounded-sm' alt='cover image' />}
       <Body body={body} />
       <PostFooter next={next} previous={previous} slug={slug} />
     </article>

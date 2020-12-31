@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import React from 'react';
+import React, { memo } from 'react';
 import { AiFillTags } from 'react-icons/ai';
 import { FaGithub, FaTwitter } from 'react-icons/fa';
 import { ImBlog } from 'react-icons/im';
@@ -55,7 +55,7 @@ const TwitterIcon: React.FC = () => (
   </ExternalLink>
 );
 
-export const Header: React.FC = () => (
+export const Header: React.FC = memo(() => (
   <header className='border-b w-full h-12 lg:h-16 lg:px-4'>
     <nav className='flex pl-2 lg:px-0 h-full max-w-screen-xl mx-auto items-center justify-between'>
       <Link to='/' className=''>
@@ -84,4 +84,4 @@ export const Header: React.FC = () => (
       </ul>
     </nav>
   </header>
-);
+));

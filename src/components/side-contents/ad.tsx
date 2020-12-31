@@ -49,8 +49,12 @@ const YouTubeIFrame = memo(() => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setUrl(choiceUrl());
-    }, 1000 * 60);
+      let newUrl = choiceUrl();
+      while (url === newUrl) {
+        newUrl = choiceUrl();
+      }
+      setUrl(newUrl);
+    }, 1000 * 60 * 2);
 
     return () => {
       clearInterval(intervalId);
@@ -59,6 +63,7 @@ const YouTubeIFrame = memo(() => {
 
   return (
     <iframe
+      loading='lazy'
       className='w-full rounded'
       src={url}
       frameBorder='0'
@@ -87,14 +92,25 @@ const OptoutButton = ({ setOptout }: { setOptout: React.Dispatch<React.SetStateA
 
 export const Ad: React.FC = memo(() => {
   const [optout, setOptout] = useState(false);
+  const [waiting, setWaiting] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setWaiting(false);
+    }, 1000 * 15);
+  }, []);
 
   return (
     <div className='lg:px-2 py-4'>
-      <p className='font-medium pb-4'>Likes</p>
-      <div className='flex justify-center relative'>
-        {!optout && <OptoutButton setOptout={setOptout} />}
-        {!optout && <YouTubeIFrame />}
-      </div>
+      {!waiting && (
+        <>
+          <p className='font-medium pb-4'>Likes</p>
+          <div className='flex justify-center relative'>
+            {!optout && <OptoutButton setOptout={setOptout} />}
+            {!optout && <YouTubeIFrame />}
+          </div>
+        </>
+      )}
     </div>
   );
 });
