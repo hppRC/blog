@@ -7,7 +7,7 @@ export const NewPosts: React.FC<{ slug: string }> = ({ slug }) => {
   return (
     <div className='py-4 lg:px-2 border-b'>
       <p className='font-medium'>New posts</p>
-      <ul>
+      <ul className='text-sm'>
         {posts.map((post) => (
           <li className='m-2' key={post.slug}>
             <Link to={`/posts/${post.slug}`}>

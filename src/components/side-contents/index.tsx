@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { isMobile } from 'react-device-detect';
 import { Ad } from './ad';
 import { NewPosts } from './new-posts';
 import { ShareButtons } from './share-buttons';
@@ -18,8 +19,8 @@ type Props = {
 export const SideContents: React.FCX<Props> = ({ headings, path, title }) => {
   const slug = path.split(`/`).pop() || ``;
   return (
-    <div className='sticky top-0 pt-16 pl-2'>
-      {headings && <TableOfContents headings={headings} path={path} title={title} />}
+    <div className='lg:sticky lg:top-0 pt-8 lg:pt-16 lg:pl-2'>
+      {headings && !isMobile && <TableOfContents headings={headings} path={path} title={title} />}
       <NewPosts slug={slug} />
       <ShareButtons path={path} title={title} />
       <Ad />

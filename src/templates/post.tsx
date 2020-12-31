@@ -4,6 +4,8 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React, { memo } from 'react';
 import { SEO, SideContents } from 'src/components';
 
+import { isMobile } from 'react-device-detect';
+
 import { PostFooter } from './post-footer';
 import { PostHeader } from './post-header';
 
@@ -33,16 +35,19 @@ const Component: React.FCX<Props> = memo(({ body, fluid, headings, path, next, d
   <div className='px-4 sm:px-16 lg:px-0 lg:grid lg:grid-cols-5 pb-12 mx-auto w-full'>
     <article className='col-start-2 col-span-3'>
       <PostHeader date={date} tags={tags} title={title} />
-      {fluid ? <Img fluid={fluid} className='-mx-6 lg:mx-0 mb-8' alt='cover image' /> : <div className='h-40 w-full' />}
+      {fluid && <Img fluid={fluid} className='-mx-6 lg:mx-0 mb-8' alt='cover image' />}
       <Body body={body} />
       <PostFooter next={next} previous={previous} slug={slug} />
     </article>
-    <div className='hidden lg:block lg:pl-4'>
-      <SideContents headings={headings} path={path} title={title || slug} />
-    </div>
-    <div className='border-t mt-8 lg:hidden'>
-      <SideContents path={path} title={title || slug} />
-    </div>
+    {isMobile ? (
+      <div className='border-t'>
+        <SideContents path={path} title={title || slug} />
+      </div>
+    ) : (
+      <div className='pl-4'>
+        <SideContents headings={headings} path={path} title={title || slug} />
+      </div>
+    )}
   </div>
 ));
 

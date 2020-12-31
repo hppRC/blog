@@ -22,19 +22,11 @@ cover:
 
 主に React(Gatsby.js), TypeScript で何かしていました。あとブログを作っていました。といっても、開発していたのはいまみなさんが見ているこのブログではなくて、デザインがうるさすぎて気に入らず、既に捨てられた方のブログです。↓
 
-<div>
-<blockquote class="twitter-tweet" data-dnt="true" align="center"><p lang="ja" dir="ltr">設定間違えた <a href="https://t.co/SQgTSkAMoH">pic.twitter.com/SQgTSkAMoH</a></p>&mdash; hpp (@hpp_ricecake) <a href="https://twitter.com/hpp_ricecake/status/1216450299038064640?ref_src=twsrc%5Etfw">January 12, 2020</a></blockquote>
+<div class="mb-8">
+<blockquote class="twitter-tweet mb-8" data-dnt="true" align="center"><p lang="ja" dir="ltr">設定間違えた <a href="https://t.co/SQgTSkAMoH">pic.twitter.com/SQgTSkAMoH</a></p>&mdash; hpp (@hpp_ricecake) <a href="https://twitter.com/hpp_ricecake/status/1216450299038064640?ref_src=twsrc%5Etfw">January 12, 2020</a></blockquote>
 </div>
 
-それと、名古屋合同懇親会(NGK2020s)というものに参加させていただいて、以下のLTをしました。
-
-<div style=" position: relative;left: 0; width: 100%; height: 0; padding-bottom: 56.1972%; margin-bottom: 4rem;">
-  <iframe src="https://speakerdeck.com/player/38d87947583c41bca11ac50df54a4ea9" style=" position: absolute; top: 0; left: 0; width: 100%; height: 100%;border: 0;" allowfullscreen scrolling="no" allow="encrypted-media">
-  </iframe>
-</div>
-
-スライドを Gatsby.js で作っていて、適当に閲覧できる web ページとして放流してあります。
-[https://ngk2020s.hpprc.com/](https://ngk2020s.hpprc.com/)
+それと、名古屋合同懇親会(NGK2020s)というものに参加させていただいて、Gatsby についての LT をやりました。
 
 [今年もやる](https://ngk2021s.connpass.com/event/199017/)ようなので、名古屋周辺にお住みの方は申し込んでみるといいじゃないでしょうか。
 
@@ -49,10 +41,9 @@ cover:
 
 たくさん V を見ていた以外の記憶がありません。マジで何もなかったんじゃないか？
 
-<div>
+<div class="mb-8">
 <blockquote class="twitter-tweet" data-dnt="true" align="center"><p lang="ja" dir="ltr">本日のキャサリンママ<a href="https://twitter.com/hashtag/%E3%83%95%E3%83%96%E3%82%ADch?src=hash&amp;ref_src=twsrc%5Etfw">#フブキch</a> <a href="https://twitter.com/hashtag/%E7%B5%B5%E3%83%95%E3%83%96%E3%82%AD?src=hash&amp;ref_src=twsrc%5Etfw">#絵フブキ</a> <a href="https://t.co/yoOuQN6988">pic.twitter.com/yoOuQN6988</a></p>&mdash; hpp (@hpp_ricecake) <a href="https://twitter.com/hpp_ricecake/status/1227626277697253377?ref_src=twsrc%5Etfw">February 12, 2020</a></blockquote>
 </div>
-
 
 ツイートを検索している間になんか思い出してきたので適当に書くことにします。
 
@@ -61,11 +52,12 @@ cover:
 
 第3クォーター(弊学部はクォーター制)でデータベースに関する講義を落としかけたので、ちゃんと勉強したことを覚えています。どうやら勉強は真面目にやるとよさそうです。
 
+それと、ふだんは地元の会社でエンジニアのバイトをしていた気がします。
+
 その他には、N-ISUCON というパフォーマンスチューニングのイベントに運良く参加できることになったので、同じ大学の人と3人チームで参加してきました。
 
-<div>
+<div class="mb-8">
 <blockquote class="twitter-tweet" data-dnt="true" align="center"><p lang="ja" dir="ltr">対戦よろしくお願いします！ <a href="https://t.co/Xqz6FeVEMl">pic.twitter.com/Xqz6FeVEMl</a></p>&mdash; hpp (@hpp_ricecake) <a href="https://twitter.com/hpp_ricecake/status/1228848914553397248?ref_src=twsrc%5Etfw">February 16, 2020</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 
 成績は 10 チーム中 3位でした、コードを眺めていたらチームメイトがガーッと改善してくれました。僕はお茶をしっぽり飲んでいた記憶があります。
@@ -86,7 +78,7 @@ CyberAgent さんの CA Tech Job というインターンに参加させてい�
 成長した姿をいつか見せられたらと思います。がんばるぞ！！
 
 
-<div>
+<div class="mb-8">
 <blockquote class="twitter-tweet" data-dnt="true" align="center"><p lang="ja" dir="ltr">CAでのインターン、社会情勢も踏まえ本日で終了と相成りました！<br />最後数日出来なかったのは残念だったけど、めちゃくちゃ楽しかったので満足！！！！！！！<br />また参加しにきます、ありがとうございました！！！！！！！！！！ <a href="https://t.co/6GEYlP490o">pic.twitter.com/6GEYlP490o</a></p>&mdash; hpp (@hpp_ricecake) <a href="https://twitter.com/hpp_ricecake/status/1243184983058964480?ref_src=twsrc%5Etfw">March 26, 2020</a></blockquote>
 </div>
 
@@ -125,7 +117,7 @@ CyberAgent さんの CA Tech Job というインターンに参加させてい�
 うじまるくんの誕生日をお祝いしました、おめ！！
 どの発表も面白かったですが、僕はこんなのを喋りました。
 
-<div style=" position: relative;left: 0; width: 100%; height: 0; padding-bottom: 56.1972%;"><iframe src="https://speakerdeck.com/player/7ed08c25391f4b2991fbda94b052319c" style=" position: absolute; top: 0; left: 0; width: 100%; height: 100%;border: 0;" allowfullscreen scrolling="no" allow="encrypted-media"></iframe></div>
+<div class="mb-8" style=" position: relative;left: 0; width: 100%; height: 0; padding-bottom: 56.1972%;"><iframe src="https://speakerdeck.com/player/7ed08c25391f4b2991fbda94b052319c" style=" position: absolute; top: 0; left: 0; width: 100%; height: 100%;border: 0;" allowfullscreen scrolling="no" allow="encrypted-media"></iframe></div>
 
 そんな感じです、現在も稼働中のうぢまる([@ujimaru0000](https://twitter.com/ujimaru0000))くんをよろしくお願いいたします。
 
@@ -134,22 +126,28 @@ CyberAgent さんの CA Tech Job というインターンに参加させてい�
 
 その他には、先行研究を漁ったり、論文を読んだりしていた気がします。あいも変わらず無限に V を見ていました。
 
-<div>
+<div class="mb-8">
 <blockquote class="twitter-tweet" data-dnt="true" align="center"><p lang="zh" dir="ltr">先行研究 <a href="https://t.co/e2TFB5VsAR">pic.twitter.com/e2TFB5VsAR</a></p>&mdash; hpp (@hpp_ricecake) <a href="https://twitter.com/hpp_ricecake/status/1275738005051813891?ref_src=twsrc%5Etfw">June 24, 2020</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 
-あ！iPad pro を買いました。
+
+それと CyberAgent 社の backend tuning competition に参加して優勝することができました。技術的なイベントで目立った成績を残したことがなかったので、とっても嬉しかったです。
+
+あ！iPad pro を買いました。嬉しいですね。嬉しいと言いなさい。
 
 # 7月
 
-ついに院試勉強をする時がきてしまいました。でもめんどくさがりなので全くしていませんでした。
+7月はちょくちょく趣味の開発をしつつ、先行研究の再現実装をしていました。直接いまの研究に使っているわけではないですが、基本的な PyTorch のお勉強はできました。
 
-というのも、院試が 8月頭から 9月頭に移動したので、そこまで焦る必要がなくなったからです。
-
-7月はちょくちょく趣味の開発をしつつ、先行研究の再現実装をしていました。直接いまの研究に使っているわけではないですが、基本的な PyTorch のお勉強はできました。でも 6500行の Python コードはもう読みたくないです。
+でも 6500行の Python コードを読むのは疲れました、めちゃくちゃ綺麗なコードでも疲れると思うので、況や研究用のコードをやという感じです。
 
 
 # 8月
 
+にじさんじ甲子園をずっと見ていました。
 
+<div class="mb-8" style=" position: relative;left: 0; width: 100%; height: 0; padding-bottom: 56.25%;"><iframe src="https://www.youtube.com/embed/i55GH7l4Y0I?rel=0" style=" position: absolute; top: 0; left: 0; width: 100%; height: 100%;border: 0;" allowfullscreen scrolling="no" allow="encrypted-media; accelerometer; clipboard-write; gyroscope; picture-in-picture"></iframe></div>
+
+院試勉強、実はかなりまずくて、ここらへんからちゃんと勉強しないといけないことに気付き始めます。
+
+うちの院は内部生の推薦とか有利な制度とかが無いので、外部の人と普通に真剣勝負をしなければいけません。大変ですね。

@@ -17,7 +17,8 @@ export const TableOfContents: React.FC<Props> = ({ headings, path }) => {
   slugger.reset();
   return (
     <div className='border-b px-2'>
-      <ul className=''>
+      <p className='font-medium'>Table of Contents</p>
+      <ul className='text-sm'>
         {headings?.map(({ value, depth }) => (
           <Link className='block hover:bg-gray-300 px-2 my-1' key={value} to={`${path}#${slugger.slug(value)}`}>
             <li className='truncate' style={{ paddingLeft: `${(depth - 1) * 1.2}rem` }}>
