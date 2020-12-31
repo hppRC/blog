@@ -12,7 +12,7 @@ type PostFooterProps = {
 export const PostFooter: React.FCX<PostFooterProps> = ({ next, previous, slug }) => (
   <div>
     <div className='py-8'>
-      <ExternalLink href={`https://github.com/hppRC/blog/blob/master/contents/posts/${slug}.md`} className=''>
+      <ExternalLink href={`https://github.com/hppRC/blog/blob/main/contents/posts/${slug}.md`} className=''>
         <div className='inline-block underline'>
           <div className='flex hover:opacity-50'>
             <i className='mr-1'>
