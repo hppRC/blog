@@ -104,7 +104,7 @@ export const Ad: React.FC = memo(() => {
     <div className='lg:px-2 py-4'>
       {!waiting && (
         <>
-          <p className='font-medium pb-4'>Likes</p>
+          <p className='font-medium pb-4'>Favorites</p>
           <div className='flex justify-center relative'>
             {!optout && <OptoutButton setOptout={setOptout} />}
             {!optout && <YouTubeIFrame />}
