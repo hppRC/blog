@@ -29,7 +29,7 @@ export const wrapRootElement: React.FC<WrapRootElementBrowserArgs> = ({ element 
       }}
     >
       <Helmet>
-        <script defer src='//cdn.iframe.ly/embed.js' charSet='utf-8' />
+        <script async src='//cdn.iframe.ly/embed.js' charSet='utf-8' />
       </Helmet>
       <Layout>{element}</Layout>
     </MDXProvider>
