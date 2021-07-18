@@ -9,7 +9,7 @@ export const Footer: React.FC = memo(() => (
   >
     <div className='text-sm leading-relaxed py-1 lg:py-0'>This site uses Google Analytics.</div>
     <div className='text-sm flex items-center leading-relaxed py-1 lg:py-0'>
-      ©2020
+      ©2021
       <ExternalLink className='text-sm underline hover:opacity-50 mx-1' href='https://twitter.com/hpp_ricecake'>
         hpp_ricecake
       </ExternalLink>
