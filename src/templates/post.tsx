@@ -70,7 +70,7 @@ const Container: React.FCX<PageProps> = ({ data, pageContext, path }) => {
 };
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     mdx(slug: { eq: $slug }) {
       body
       excerpt(pruneLength: 400)
