@@ -6,5 +6,4 @@ import 'src/styles/custom-syntax-highlight.scss';
 import 'src/styles/custom-katex-styles.scss';
 import 'src/styles/custom-post-body.scss';
 
-export { wrapPageElement } from './wrap-page-element';
-export { wrapRootElement } from './wrap-root-element';
+export { wrapRootElement } from 'src/gatsby/wrap-root-element';

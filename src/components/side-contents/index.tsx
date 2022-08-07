@@ -20,7 +20,7 @@ export const SideContents: React.FCX<Props> = ({ headings, path, title }) => {
   const slug = path.split(`/`).pop() || ``;
   return (
     <div className='lg:sticky lg:top-0 pt-8 lg:pt-16'>
-      {headings && !isMobile && <TableOfContents headings={headings} path={path} title={title} />}
+      {headings && !isMobile && <TableOfContents headings={headings} path={path} />}
       <NewPosts slug={slug} />
       <ShareButtons path={path} title={title} />
       <Ad />
