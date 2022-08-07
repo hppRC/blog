@@ -9,7 +9,7 @@ type Props = {
   image?: string;
 };
 
-export const SEO: React.FC<Props> = ({ title = ``, description = ``, pathname = ``, image = `` }) => {
+export const SEO: React.FC<Props> = ({ title, description, pathname, image }) => {
   const siteMetadata = useSiteMetadata();
   const buildTime = useSiteBuildTime();
   const iconPNG = useAnyImage(`icon.png`);
@@ -164,4 +164,11 @@ export const SEO: React.FC<Props> = ({ title = ``, description = ``, pathname = 
       <script type='application/ld+json'>{JSON.stringify(jsonLdConfigs)}</script>
     </Helmet>
   );
+};
+
+SEO.defaultProps = {
+  title: ``,
+  description: ``,
+  pathname: ``,
+  image: ``,
 };

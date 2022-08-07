@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { graphql, useStaticQuery } from 'gatsby';
 
 type AllPostsQuery = {
@@ -7,7 +8,7 @@ type AllPostsQuery = {
 };
 
 export const useAllPosts = (): Post[] => {
-  const { allMdx } = useStaticQuery<AllPostsQuery>(graphql`
+  const { nodes } = useStaticQuery<AllPostsQuery>(graphql`
     {
       allMdx(filter: { slug: { ne: "dummy" } }, sort: { order: DESC, fields: [frontmatter___date] }) {
         nodes {
@@ -27,7 +28,6 @@ export const useAllPosts = (): Post[] => {
         }
       }
     }
-  `);
-
-  return allMdx.nodes;
+  `).allMdx;
+  return nodes;
 };

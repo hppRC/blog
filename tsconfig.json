@@ -3,18 +3,30 @@
     "target": "esnext",
     "module": "esnext",
     "jsx": "react",
-    "lib": ["dom", "es2015", "es2020"],
+    "lib": [
+      "dom",
+      "es2015",
+      "es2020"
+    ],
     "moduleResolution": "node",
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-
     "baseUrl": ".",
     "paths": {
-      "src/*": ["./src/*"]
+      "src/*": [
+        "./src/*"
+      ]
     },
-    "typeRoots": ["src/types", "node_modules/@types"]
+    "typeRoots": [
+      "src/types",
+      "node_modules/@types"
+    ]
   },
-  "exclude": ["node_modules", "public", ".cache"],
+  "exclude": [
+    "node_modules",
+    "public",
+    ".cache"
+  ],
 }

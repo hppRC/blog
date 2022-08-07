@@ -6,7 +6,6 @@ const slugger = new GithubSlugger();
 
 type Props = {
   path: string;
-  title?: string;
   headings: {
     value: string;
     depth: number;

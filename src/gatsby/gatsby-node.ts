@@ -54,15 +54,16 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions:
   const { edges } = result.data.allMdx;
   const postsByTag: { [key: string]: Post[] } = {}; // Store posts for each tags
 
-  edges.forEach(({ previous, next, node }) => {
-    const { frontmatter, slug } = node;
-    const { tags } = frontmatter;
-
+  edges.forEach(({ node }) => {
+    const { tags } = node.frontmatter;
     tags?.map(normalizeTag).forEach((tag) => {
       if (!postsByTag[tag]) postsByTag[tag] = [];
       if (!postsByTag[tag].includes(node)) postsByTag[tag].push(node);
     });
+  });
 
+  const pagesPromises = edges.map(async ({ previous, next, node }) => {
+    const { slug } = node;
     createPage({
       path: `posts/${slug}`,
       component: postTemplate,
@@ -77,7 +78,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions:
   // generate each tag's posts page if the template exits
   const tags = Object.keys(postsByTag);
 
-  tags.forEach((tagName) => {
+  const tagsPromises = tags.map(async (tagName) => {
     const posts = postsByTag[tagName];
     createPage({
       path: `tags/${tagName}`,
@@ -88,6 +89,8 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions:
       },
     });
   });
+
+  await Promise.all([...pagesPromises, ...tagsPromises]);
 };
 
 // export const onCreateNode: GatsbyNode['onCreateNode'] = (args) => {

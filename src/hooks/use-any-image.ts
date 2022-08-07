@@ -15,7 +15,7 @@ type AnyImageQuery = {
 export const useAnyImage = (filename: string): IGatsbyImageData | undefined => {
   // relativePath: path from `image`
   // it is configured in gatsby-config.js of `gatsby-source-filesystem`
-  const { allFile } = useStaticQuery<AnyImageQuery>(graphql`
+  const { nodes } = useStaticQuery<AnyImageQuery>(graphql`
     {
       allFile {
         nodes {
@@ -26,8 +26,8 @@ export const useAnyImage = (filename: string): IGatsbyImageData | undefined => {
         }
       }
     }
-  `);
+  `).allFile;
 
-  const targetImage = allFile.nodes?.find(({ relativePath }) => relativePath.includes(filename));
+  const targetImage = nodes?.find(({ relativePath }) => relativePath.includes(filename));
   return getImage((targetImage as ImageDataLike) ?? null);
 };

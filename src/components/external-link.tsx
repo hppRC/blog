@@ -2,6 +2,7 @@ import React from 'react';
 
 type ExternalLinkProps = {
   href: string;
+  children: React.ReactNode;
 };
 
 export const ExternalLink: React.FCX<ExternalLinkProps> = ({ children, ...props }) => (

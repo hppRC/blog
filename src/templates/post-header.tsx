@@ -2,9 +2,9 @@ import { Link } from 'gatsby';
 import React from 'react';
 
 type PostHeaderProps = {
-  title?: string;
-  tags?: string[];
-  date?: string;
+  title: string;
+  tags: string[];
+  date: string;
 };
 
 export const PostHeader: React.FC<PostHeaderProps> = ({ title, tags, date }) => (
