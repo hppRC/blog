@@ -28,15 +28,15 @@ const YOUTUBE_URL_LIST = [
   `https://www.youtube.com/embed/z3tukOqkjyc`, // 疑心暗鬼 / 葛葉
   `https://www.youtube.com/embed/ZpE3oRKpJQE`, // アスノヨゾラ哨戒班 / ド葛本社
   `https://www.youtube.com/embed/2l_6oIGTrbg`, // スパークル / 大神ミオ
-  `https://www.youtube.com/embed/dPTeBvVJ_xY`, // 覚醒 / 星街すいせい
+  // `https://www.youtube.com/embed/dPTeBvVJ_xY`, // 覚醒 / 星街すいせい
   `https://www.youtube.com/embed/XKOtUV_7izo`, // 第六感 / Reol
   `https://www.youtube.com/embed/F6KgJox-NmM`, // LAZY / DUSTCELL
   `https://www.youtube.com/embed/5Ec6eEOEuOM`, // 終点 / DUSTCELL
   `https://www.youtube.com/embed/broWJzNAdQM`, // あゝオオサカ dreamin' night / 歌衣メイカ, バーチャルゴリラ, 七瀬タク
   `https://www.youtube.com/embed/vO2cPVf1hMQ`, // ファッションモンスター / でびでび・でびる, 竜胆尊
   `https://www.youtube.com/embed/XwZZeMNanKw`, // 地獄屋八丁荒らし / 戌亥とこ
-  `https://www.youtube.com/embed/UBSx4qqeikY`, // 花に亡霊 / ヨルシカ
-  `https://www.youtube.com/embed/e0W-QW58Dy0`, // 獣ゆく細道 / 町田ちま, ジョー・力一
+  // `https://www.youtube.com/embed/UBSx4qqeikY`, // 花に亡霊 / ヨルシカ
+  // `https://www.youtube.com/embed/e0W-QW58Dy0`, // 獣ゆく細道 / 町田ちま, ジョー・力一
   `https://www.youtube.com/embed/tLsJQ5srVQA`, // LOST IN PARADISE / ALI, AKLO
   `https://www.youtube.com/embed/rZ6JSwVQ1tM`, // インドア系ならトラックメイカー / ござやよ
   `https://www.youtube.com/embed/6ydgEipkUEU`, // DEAD BEATS / Calliope Mori

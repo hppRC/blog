@@ -1,30 +1,27 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-import type { FluidObject } from 'gatsby-image';
+import type { IGatsbyImageData, ImageDataLike } from 'gatsby-plugin-image';
+import { getImage } from 'gatsby-plugin-image';
 
 type AnyImageQuery = {
   allFile: Partial<{
     nodes: {
       relativePath: string;
-      childImageSharp?: {
-        fluid?: FluidObject;
-      };
+      childImageSharp?: ImageDataLike;
     }[];
   }>;
 };
 
-export const useAnyImage = (filename: string): FluidObject | undefined => {
+export const useAnyImage = (filename: string): IGatsbyImageData | undefined => {
   // relativePath: path from `image`
   // it is configured in gatsby-config.js of `gatsby-source-filesystem`
   const { allFile } = useStaticQuery<AnyImageQuery>(graphql`
-    query {
+    {
       allFile {
         nodes {
           relativePath
           childImageSharp {
-            fluid(maxWidth: 1400, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
+            gatsbyImageData(quality: 90, layout: FULL_WIDTH)
           }
         }
       }
@@ -32,5 +29,5 @@ export const useAnyImage = (filename: string): FluidObject | undefined => {
   `);
 
   const targetImage = allFile.nodes?.find(({ relativePath }) => relativePath.includes(filename));
-  return targetImage?.childImageSharp?.fluid;
+  return getImage((targetImage as ImageDataLike) ?? null);
 };

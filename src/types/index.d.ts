@@ -30,11 +30,7 @@ type Frontmatter = Partial<{
   title: string;
   date: string;
   tags: string[];
-  cover: {
-    childImageSharp: {
-      fluid: import("gatsby-image").FluidObject;
-    };
-  };
+  cover: import("gatsby-plugin-image").ImageDataLike;
 }>;
 
 type PostsByTag = {
@@ -89,11 +85,11 @@ type JsonLdConfig = Partial<{
     }>;
   }>;
   image:
-    | Partial<{
-        '@type': string;
-        url: string;
-      }>
-    | string;
+  | Partial<{
+    '@type': string;
+    url: string;
+  }>
+  | string;
   itemListElement: [
     Partial<{
       '@type': string;

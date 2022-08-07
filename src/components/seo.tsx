@@ -36,7 +36,7 @@ export const SEO: React.FC<Props> = ({ title = ``, description = ``, pathname = 
     title: title || defaultTitle,
     description: description || defaultDescription,
     url: `${siteUrl}${pathname || ``}`,
-    image: `${siteUrl}${image || banner?.src}`,
+    image: `${siteUrl}${image || ``}`,
   };
 
   // JSON+LD configurations
@@ -47,7 +47,7 @@ export const SEO: React.FC<Props> = ({ title = ``, description = ``, pathname = 
       description: defaultDescription,
       image: {
         '@type': `ImageObject`,
-        url: icon?.src,
+        url: icon?.images?.fallback?.src,
         width: 60,
         height: 60,
       },
@@ -61,7 +61,7 @@ export const SEO: React.FC<Props> = ({ title = ``, description = ``, pathname = 
       url: siteUrl,
       image: {
         '@type': `ImageObject`,
-        url: banner?.src,
+        url: banner?.images?.fallback?.src,
         width: 60,
         height: 60,
       },
@@ -74,7 +74,7 @@ export const SEO: React.FC<Props> = ({ title = ``, description = ``, pathname = 
     description: defaultDescription,
     logo: {
       '@type': `ImageObject`,
-      url: icon?.src,
+      url: icon?.images?.fallback?.src,
       width: 60,
       height: 60,
     },

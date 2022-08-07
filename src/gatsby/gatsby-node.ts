@@ -1,17 +1,6 @@
 import type { GatsbyNode } from 'gatsby';
 import { normalizeTag } from '../lib';
 
-const imageFragment = `
-tracedSVG
-base64
-sizes
-srcSet
-src
-srcSetWebp
-srcWebp
-aspectRatio
-`;
-
 const blogData = `
 excerpt(pruneLength: 400)
 slug
@@ -21,15 +10,12 @@ frontmatter {
   tags
   cover {
     childImageSharp {
-      fluid(maxWidth: 1400, quality: 90) {
-        ${imageFragment}
-      }
+      gatsbyImageData(quality: 90, layout: CONSTRAINED, placeholder: TRACED_SVG)
     }
   }
 }
 `;
 
-// you can't use QraphQL query fragments to get fluid object in gatsby-node.
 const allMdxQuery = `
 query {
   allMdx(filter: { slug: { ne: "dummy" } }, sort: { order: DESC, fields: [frontmatter___date] }) {

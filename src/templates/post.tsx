@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import type { IGatsbyImageData } from 'gatsby-plugin-image';
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React, { memo } from 'react';
 import { SEO, SideContents } from 'src/components';
@@ -9,16 +10,13 @@ import { isMobile } from 'react-device-detect';
 import { PostFooter } from './post-footer';
 import { PostHeader } from './post-header';
 
-// eslint-disable-next-line import/order
-import type { FluidObject } from 'gatsby-image';
-
 type Props = {
   body: string;
   headings: { value: string; depth: number }[];
   title?: string;
   date?: string;
   tags?: string[];
-  fluid?: FluidObject;
+  image?: IGatsbyImageData;
   previous?: Post;
   next?: Post;
   slug: string;
@@ -31,11 +29,11 @@ const Body = memo(({ body }: { body: string }) => (
   </section>
 ));
 
-const Component: React.FCX<Props> = memo(({ body, fluid, headings, path, next, date, previous, title, tags, slug }) => (
+const Component: React.FCX<Props> = memo(({ body, image, headings, path, next, date, previous, title, tags, slug }) => (
   <div className='px-4 sm:px-16 lg:px-0 lg:grid lg:grid-cols-12 pb-12 mx-auto w-full'>
     <article className='lg:col-start-2 lg:col-span-8 xl:col-start-3 xl:col-span-7'>
       <PostHeader date={date} tags={tags} title={title} />
-      {fluid && <Img fluid={fluid} className='-mx-6 lg:mx-0 mb-8 rounded-sm' alt='cover image' />}
+      {image && <GatsbyImage image={image} className='-mx-6 lg:mx-0 mb-8 rounded-sm' alt='cover image' />}
       <Body body={body} />
       <PostFooter next={next} previous={previous} slug={slug} />
     </article>
@@ -58,13 +56,13 @@ const Container: React.FCX<PageProps> = ({ data, pageContext, path }) => {
 
   const { body, headings, frontmatter } = data.mdx;
   const { title, date, tags, cover } = frontmatter;
-  const fluid = cover?.childImageSharp?.fluid;
+  const image = getImage(cover ?? null);
   const { previous, next, slug } = pageContext;
 
   return (
     <>
-      <SEO title={title} pathname={path} image={fluid?.src} />
-      <Component {...{ path, body, headings, title, date, tags, fluid, previous, next, slug }} />
+      <SEO title={title} pathname={path} image={image?.images.fallback?.src} />
+      <Component {...{ path, body, headings, title, date, tags, image, previous, next, slug }} />
     </>
   );
 };
@@ -86,9 +84,7 @@ export const query = graphql`
         tags
         cover {
           childImageSharp {
-            fluid(maxWidth: 1400, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
+            gatsbyImageData(quality: 90, layout: CONSTRAINED, placeholder: TRACED_SVG)
           }
         }
       }

@@ -293,7 +293,7 @@ COVID-19の陰性証明書がないと帰国ができないので、これでは
 以上の諸々の手続きと、10時間程度のフライトを経て、無事に日本へ帰国することができました。
 
 
-<video lazy loop muted playsInline controls style={{ width: "100%", height: "768px" }}>
+<video lazy="true" loop muted playsInline controls style={{ width: "100%", height: "768px" }}>
   <source src="./naacl2022-1.mp4" alt="シアトルを出発するときのタイムラプス" />
   <figcaption>シアトルを出発するときのタイムラプス</figcaption>
 </video>

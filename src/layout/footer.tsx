@@ -18,7 +18,7 @@ export const Footer: React.FC = memo(() => (
       .
     </div>
     <div className='flex items-center flex-col lg:flex-row'>
-      <div className="flex">
+      <div className='flex'>
         ©2022
         <ExternalLink className='underline hover:opacity-50 mx-1' href='https://twitter.com/hpp_ricecake'>
           hpp / Hayato Tsukagoshi
@@ -29,9 +29,7 @@ export const Footer: React.FC = memo(() => (
           </i>
         </ExternalLink>
       </div>
-      <div>
-      Developed and designed by hpp.
-      </div>
+      <div>Developed and designed by hpp.</div>
     </div>
     <div className='flex items-center'>
       Built with

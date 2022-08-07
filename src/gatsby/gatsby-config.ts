@@ -16,8 +16,10 @@ const siteMetadata = {
   basePath: `/`,
   social: {
     twitter: `https://twitter.com/hpp_ricecake`,
+    linkedin: `https://www.linkedin.com/in/hpprc/`,
     github: `https://github.com/hppRC`,
     qiita: `https://qiita.com/hppRC`,
+    zenn: `https://zenn.dev/hpp`,
   },
 };
 
@@ -85,8 +87,7 @@ const mdxPlugins = {
   resolve: `gatsby-plugin-mdx`,
   options: {
     extensions: [`.mdx`, `.md`],
-    remarkPlugins: [
-    ],
+    remarkPlugins: [],
     gatsbyRemarkPlugins: [
       {
         resolve: `gatsby-remark-autolink-headers`,
@@ -144,9 +145,7 @@ const mdxPlugins = {
         resolve: `gatsby-remark-figure-caption`,
       },
     ],
-    plugins: [
-      `@raae/gatsby-remark-oembed`,
-    ],
+    plugins: [`@raae/gatsby-remark-oembed`],
   },
 };
 
@@ -197,6 +196,7 @@ export default {
   siteMetadata,
   plugins: [
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-transformer-sharp`,
       options: { checkSupportedExtensions: false },

@@ -8,7 +8,7 @@ type AllPostsQuery = {
 
 export const useNewest6Posts = (): Post[] => {
   const { allMdx } = useStaticQuery<AllPostsQuery>(graphql`
-    query {
+    {
       allMdx(filter: { slug: { ne: "dummy" } }, limit: 6, sort: { order: DESC, fields: [frontmatter___date] }) {
         nodes {
           body
@@ -20,9 +20,7 @@ export const useNewest6Posts = (): Post[] => {
             tags
             cover {
               childImageSharp {
-                fluid(maxWidth: 1400, quality: 90) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+                gatsbyImageData(quality: 90, layout: CONSTRAINED, placeholder: TRACED_SVG)
               }
             }
           }
