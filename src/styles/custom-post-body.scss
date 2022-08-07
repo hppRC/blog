@@ -48,7 +48,35 @@
     margin-bottom: 2.5rem;
   }
 
-  >blockquote>p {
-    margin-bottom: 0rem;
+  >blockquote {
+    border-color: rgb(209 213 219);
+    border-left-width: 2px;
+    background-color: rgb(249 250 251);
+
+    // md:ml-3 md:pr-3 md:mr-3 md:pr-4 lg:pl-4 lg:pr-4 lg:mr-4;
+    margin-bottom: 2rem;
+    margin-right: 0.25rem;
+    padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+
+    @media (min-width: 768px) {
+      margin-left: 0.75rem;
+      margin-right: 0.75rem;
+      padding-right: 0.75rem;
+    }
+
+    @media (min-width: 1024px) {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      padding-right: 1rem;
+    }
+
+    >p {
+      margin-bottom: 0rem;
+    }
+  }
+
+  div.twitter-tweet {
+    margin: 0 auto;
+    padding: 1rem 0;
   }
 }

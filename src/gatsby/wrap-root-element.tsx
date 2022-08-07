@@ -29,12 +29,6 @@ export const wrapRootElement: React.FC<WrapRootElementBrowserArgs> = ({ element 
         ul: (props) => <ul {...props} className='list-disc pl-6 lg:pl-8 space-y-2' />,
         ol: (props) => <ol {...props} className='list-decimal pl-8 lg:pl-10 space-y-2' />,
         li: (props) => <li {...props} className='space-y-2' />,
-        blockquote: (props) => (
-          <blockquote
-            {...props}
-            className='bg-gray-50 border-l-2 border-gray-300 mb-8 py-2 pl-3 mr-1 pr-3 md:ml-3 md:pr-3 md:mr-3 md:pr-4 lg:pl-4 lg:pr-4 lg:mr-4'
-          />
-        ),
       }}
     >
       <Helmet>

@@ -30,9 +30,9 @@ const Body = memo(({ body }: { body: string }) => (
 ));
 
 const Component: React.FCX<Props> = memo(({ body, image, headings, path, next, date, previous, title, tags, slug }) => (
-  <div className='px-4 sm:px-16 lg:px-0 lg:grid lg:grid-cols-12 pb-12 mx-auto w-full'>
-    <article className='lg:col-start-2 lg:col-span-8 xl:col-start-3 xl:col-span-7'>
-      <PostHeader date={date} tags={tags} title={title} />
+  <div className='px-2 sm:px-16 lg:px-8 lg:grid lg:grid-cols-12 pb-12 mx-auto w-full'>
+    <article className='pb-8 lg:pb-0 lg:col-start-2 lg:col-span-8 xl:col-start-3 xl:col-span-7'>
+      <PostHeader date={date || `2022/01/01`} tags={tags || []} title={title || `blog.hpprc.dev`} />
       {image && <GatsbyImage image={image} className='-mx-6 lg:mx-0 mb-8 rounded-sm' alt='cover image' />}
       <Body body={body} />
       <PostFooter next={next} previous={previous} slug={slug} />
