@@ -1,10 +1,10 @@
 import type { WrapRootElementBrowserArgs } from 'gatsby';
 /* eslint-disable jsx-a11y/heading-has-content */
 import React from 'react';
-import { Layout } from 'src/layout';
 import Helmet from 'react-helmet';
-
 import { MDXProvider } from '@mdx-js/react';
+
+import { Layout } from 'src/layout';
 
 export const wrapRootElement: React.FC<WrapRootElementBrowserArgs> = ({ element }) => {
   if (typeof window !== `undefined`) {
@@ -25,7 +25,11 @@ export const wrapRootElement: React.FC<WrapRootElementBrowserArgs> = ({ element 
         ),
         // eslint-disable-next-line jsx-a11y/anchor-has-content
         a: (props) => <a {...props} className='underline font-bold text-indigo-500' />,
-        p: (props) => <p {...props} className='mb-8 leading-loose' />,
+        p: (props) => <p {...props} className='mb-6 md:mb-8 leading-loose' />,
+        ul: (props) => <ul {...props} className='list-disc pl-6 lg:pl-8 space-y-2' />,
+        ol: (props) => <ol {...props} className='list-decimal pl-8 lg:pl-10 space-y-2' />,
+        li: (props) => <li {...props} className='space-y-2' />,
+        blockquote: (props) => <blockquote {...props} className='bg-gray-50 border-l-2 border-gray-300 mb-8 py-2 pl-3 mr-1 pr-3 md:ml-3 md:pr-3 md:mr-3 md:pr-4 lg:pl-4 lg:pr-4 lg:mr-4' />,
       }}
     >
       <Helmet>

@@ -10,7 +10,7 @@ type Props = {
 
 const Component: React.FC<Props> = ({ posts }) => (
   <div className='px-4 sm:px-16 lg:px-0 lg:grid lg:grid-cols-5 pb-12 mx-auto w-full'>
-    <ul className='lg:col-start-2 lg:col-span-3'>
+    <ul className='pt-4 pb-8 lg:col-start-2 lg:col-span-3'>
       {posts.map((post) => (
         <li className='mb-4 lg:my-4 border-b border-gray-300' key={post.slug}>
           <ArticleCard post={post} />

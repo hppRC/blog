@@ -5,27 +5,40 @@ import { ExternalLink } from 'src/components';
 export const Footer: React.FC = memo(() => (
   <footer
     id='footer'
-    className='p-4 pb-8 lg:pb-4 lg:text-base flex flex-col items-center justify-center w-full h-16 sm:h-20 text-center border-t border-grey'
+    className='lg:p-4 text-xs flex flex-col items-center justify-center w-full h-full text-center border-t border-grey'
   >
-    <div className='text-sm leading-relaxed py-1 lg:py-0'>This site uses Google Analytics.</div>
-    <div className='text-sm flex items-center leading-relaxed py-1 lg:py-0'>
-      ©2021
-      <ExternalLink className='text-sm underline hover:opacity-50 mx-1' href='https://twitter.com/hpp_ricecake'>
-        hpp_ricecake
-      </ExternalLink>
+    <div className=''>
+      This site uses{` `}
       <ExternalLink
-        className='text-sm underline hover:opacity-50 mr-1'
-        href='https://github.com/hppRC'
-        aria-label='GitHub'
+        className='underline hover:opacity-50 mr-1'
+        href='https://policies.google.com/technologies/partner-sites'
       >
-        <i>
-          <FaGithub className='text-gray-800' fontSize='18' />
-        </i>
+        Google Analytics
       </ExternalLink>
-      built with
-      <ExternalLink className='text-sm underline hover:opacity-50 mx-1' href='https://www.gatsbyjs.com/'>
+      .
+    </div>
+    <div className='flex items-center flex-col lg:flex-row'>
+      <div className="flex">
+        ©2022
+        <ExternalLink className='underline hover:opacity-50 mx-1' href='https://twitter.com/hpp_ricecake'>
+          hpp / Hayato Tsukagoshi
+        </ExternalLink>
+        <ExternalLink className='underline hover:opacity-50 mr-1' href='https://github.com/hppRC' aria-label='GitHub'>
+          <i>
+            <FaGithub className='text-gray-800' fontSize='16' />
+          </i>
+        </ExternalLink>
+      </div>
+      <div>
+      Developed and designed by hpp.
+      </div>
+    </div>
+    <div className='flex items-center'>
+      Built with
+      <ExternalLink className='underline hover:opacity-50 mx-1' href='https://www.gatsbyjs.com/'>
         Gatsby.js
       </ExternalLink>
+      .
     </div>
   </footer>
 ));

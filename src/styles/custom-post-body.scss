@@ -3,8 +3,9 @@
     padding: 2rem 0;
   }
 
-  span.gatsby-resp-image-background-image, img.gatsby-resp-image-image {
-    border-radius: 0.4rem ;
+  span.gatsby-resp-image-background-image,
+  img.gatsby-resp-image-image {
+    border-radius: 0.4rem;
   }
 
 
@@ -19,7 +20,7 @@
       margin: 0;
     }
 
-    ol  {
+    ol {
       li {
         margin: 1rem 0;
       }
@@ -30,4 +31,24 @@
     }
   }
 
+  p>.gatsby-resp-image-figure {
+    margin: 2rem 0rem;
+  }
+
+  p figcaption {
+    display: block;
+    padding: 0.75rem 0 0 1rem;
+  }
+
+  >ul {
+    margin-bottom: 2.5rem;
+  }
+
+  >ol {
+    margin-bottom: 2.5rem;
+  }
+
+  >blockquote>p {
+    margin-bottom: 0rem;
+  }
 }

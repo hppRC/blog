@@ -2,6 +2,7 @@ html {
 
   // avoid slight content shift
   height: initial;
+
   body {
     /*overscroll-behavior-y: none;*/
 
@@ -14,19 +15,15 @@ html {
 
 #footer {
   min-height: 5rem;
-}
-
-@media screen and (max-width: 640px) {
-  #footer {
-    min-height: 4rem;
-  }
+  padding: 2rem 0;
 }
 
 
 .custom-hatebu-button {
   width: 32px;
   height: 32px;
-  > a {
+
+  >a {
     display: block;
     font-weight: 700;
     line-height: 32px;
@@ -38,4 +35,3 @@ html {
     border-radius: 50%;
   }
 }
-

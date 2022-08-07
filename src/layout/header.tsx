@@ -56,7 +56,7 @@ const TwitterIcon: React.FC = () => (
 );
 
 export const Header: React.FC = memo(() => (
-  <header className='border-b w-full h-12 lg:h-16 lg:px-4'>
+  <header className='border-b w-full h-16 px-1 lg:px-4'>
     <nav className='flex pl-2 lg:px-0 h-16 max-w-screen-xl mx-auto items-center justify-between'>
       <Link to='/' className=''>
         <h1 className='hidden xs:block font-extrabold text-2xl lg:text-3xl'>blog.hpprc.dev</h1>

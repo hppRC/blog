@@ -18,7 +18,7 @@ export const PostFooter: React.FCX<PostFooterProps> = ({ next, previous, slug })
             <i className='mr-1'>
               <FaGithub fontSize='24' />
             </i>
-            View on GitHub
+            View sources on GitHub
           </div>
         </div>
       </ExternalLink>

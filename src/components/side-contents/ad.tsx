@@ -2,20 +2,20 @@
 import React, { memo, useState, useEffect } from 'react';
 
 const YOUTUBE_URL_LIST = [
-  `https://www.youtube.com/embed/Ek840SVER7c`, // チューリングラブ / 葛葉, ひまちゃん
-  `https://www.youtube.com/embed/aH0SdgEfoIc`, // エバ / メリッサ
+  `https://www.youtube.com/embed/Ek840SVER7c`, // チューリングラブ / 葛葉, 本間ひまわり
+  // `https://www.youtube.com/embed/aH0SdgEfoIc`, // エバ / メリッサ
   `https://www.youtube.com/embed/oPAcjv__fbc`, // KING / 葛葉
-  `https://www.youtube.com/embed/8eQxRL5Lqgw`, // シニカルナイトプラン / メリッサ
-  `https://www.youtube.com/embed/3JU6I12H5WU`, // レッドパージ!!! / メリッサ
-  `https://www.youtube.com/embed/L5sbzUFHot8`, // あの夏が飽和する。 / ましろ
-  `https://www.youtube.com/embed/4FcBWgi4nBg`, //  / ましろ
-  `https://www.youtube.com/embed/oH7Xi__8k7E`, // コールボーイ / 久遠千歳
+  // `https://www.youtube.com/embed/8eQxRL5Lqgw`, // シニカルナイトプラン / メリッサ
+  // `https://www.youtube.com/embed/3JU6I12H5WU`, // レッドパージ!!! / メリッサ
+  // `https://www.youtube.com/embed/L5sbzUFHot8`, // あの夏が飽和する。 / ましろ
+  // `https://www.youtube.com/embed/4FcBWgi4nBg`, //  / ましろ
+  // `https://www.youtube.com/embed/oH7Xi__8k7E`, // コールボーイ / 久遠千歳
   `https://www.youtube.com/embed/QzdsaXemBWM`, // RE:I AM / 戌亥とこ
   `https://www.youtube.com/embed/Z-UJbyLqioM`, // 群青 / 葉加瀬冬雪
   `https://www.youtube.com/embed/zPMWAj54Seg`, // Virtual to Live
   `https://www.youtube.com/embed/Y98vM_pWsJE`, // Mela! / 東堂コハク
   `https://www.youtube.com/embed/S9sd_HvFB9k`, // 快晴 / フレン
-  `https://www.youtube.com/embed/h2YDbhEURZA`, // メビウス / メリッサ
+  // `https://www.youtube.com/embed/h2YDbhEURZA`, // メビウス / メリッサ
   `https://www.youtube.com/embed/h-LOlueKCtk`, // Live Again / Calliope Mori
   `https://www.youtube.com/embed/9PYi1080Q7k`, // 失楽ペトリ / 猫又おかゆ
   `https://www.youtube.com/embed/1Phzcf1T-U8`, // ジョジョ その血の記憶〜end of THE WORLD / 緑仙, チャイカ, 社築
@@ -37,9 +37,17 @@ const YOUTUBE_URL_LIST = [
   `https://www.youtube.com/embed/XwZZeMNanKw`, // 地獄屋八丁荒らし / 戌亥とこ
   `https://www.youtube.com/embed/UBSx4qqeikY`, // 花に亡霊 / ヨルシカ
   `https://www.youtube.com/embed/e0W-QW58Dy0`, // 獣ゆく細道 / 町田ちま, ジョー・力一
-  // `https://www.youtube.com/embed/KnakQRoQRzk`, // LOST IN PARADISE / ALI, AKLO
+  `https://www.youtube.com/embed/tLsJQ5srVQA`, // LOST IN PARADISE / ALI, AKLO
   `https://www.youtube.com/embed/rZ6JSwVQ1tM`, // インドア系ならトラックメイカー / ござやよ
   `https://www.youtube.com/embed/6ydgEipkUEU`, // DEAD BEATS / Calliope Mori
+  `https://www.youtube.com/embed/B383PElQMHo`, // 融解sink / Vaundy
+  `https://www.youtube.com/embed/YO1V9fn7zYo`, // Yona Yona Journey / TAKU INOUE, Calliope Mori
+  `https://www.youtube.com/embed/BXB26PzV31k`, // end of a life / Calliope Mori
+  `https://www.youtube.com/embed/mE8hH62VyHs`, // エイプリル / 菅原圭
+  `https://www.youtube.com/embed/UFmtieXGesU`, // ライムライト / 菅原圭
+  `https://www.youtube.com/embed/LYFciXBcXIQ`, // 3時12分 / TAKU INOUE, 星街すいせい
+  `https://www.youtube.com/embed/XNURRmk8YrQ`, // ソラニン / ASIAN KUNG-FU GENERATION
+  `https://www.youtube.com/embed/_F2uHVrktYE`, // Daydreamer / Nornis
 ];
 
 const choiceUrl = () => YOUTUBE_URL_LIST[Math.floor(Math.random() * YOUTUBE_URL_LIST.length)];
@@ -64,7 +72,7 @@ const YouTubeIFrame = memo(() => {
   return (
     <iframe
       loading='lazy'
-      className='w-full rounded'
+      className='w-full h-full rounded'
       src={url}
       frameBorder='0'
       allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
@@ -101,13 +109,15 @@ export const Ad: React.FC = memo(() => {
   }, []);
 
   return (
-    <div className='lg:px-2 py-4'>
+    <div className='lg:px-2 xl:pr-4 py-4'>
       {!waiting && (
         <>
           <p className='font-medium pb-4'>Favorites</p>
-          <div className='flex justify-center relative'>
-            {!optout && <OptoutButton setOptout={setOptout} />}
-            {!optout && <YouTubeIFrame />}
+          <div className='lg:px-2'>
+            <div className='flex justify-center relative'>
+              {!optout && <OptoutButton setOptout={setOptout} />}
+              {!optout && <YouTubeIFrame />}
+            </div>
           </div>
         </>
       )}

@@ -32,8 +32,8 @@ const Body = memo(({ body }: { body: string }) => (
 ));
 
 const Component: React.FCX<Props> = memo(({ body, fluid, headings, path, next, date, previous, title, tags, slug }) => (
-  <div className='px-4 sm:px-16 lg:px-0 lg:grid lg:grid-cols-5 pb-12 mx-auto w-full'>
-    <article className='col-start-2 col-span-3'>
+  <div className='px-4 sm:px-16 lg:px-0 lg:grid lg:grid-cols-12 pb-12 mx-auto w-full'>
+    <article className='lg:col-start-2 lg:col-span-8 xl:col-start-3 xl:col-span-7'>
       <PostHeader date={date} tags={tags} title={title} />
       {fluid && <Img fluid={fluid} className='-mx-6 lg:mx-0 mb-8 rounded-sm' alt='cover image' />}
       <Body body={body} />
@@ -44,7 +44,7 @@ const Component: React.FCX<Props> = memo(({ body, fluid, headings, path, next, d
         <SideContents path={path} title={title || slug} />
       </div>
     ) : (
-      <div className='pl-4'>
+      <div className='pl-4 lg:pr-2 lg:col-span-3'>
         <SideContents headings={headings} path={path} title={title || slug} />
       </div>
     )}

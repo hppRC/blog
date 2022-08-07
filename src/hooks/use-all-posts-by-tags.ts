@@ -1,3 +1,4 @@
+import { normalizeTag } from 'src/lib';
 import { useAllPosts } from './use-all-posts';
 
 export const useAllPostsByTags = (): PostsByTag => {
@@ -5,9 +6,8 @@ export const useAllPostsByTags = (): PostsByTag => {
   const postsByTag: PostsByTag = {};
 
   nodes.forEach((node) => {
-    node.frontmatter.tags?.forEach((tag) => {
+    node.frontmatter.tags?.map(normalizeTag).forEach((tag) => {
       if (!postsByTag[tag]) postsByTag[tag] = [];
-
       postsByTag[tag].push(node);
     });
   });

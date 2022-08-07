@@ -85,6 +85,8 @@ const mdxPlugins = {
   resolve: `gatsby-plugin-mdx`,
   options: {
     extensions: [`.mdx`, `.md`],
+    remarkPlugins: [
+    ],
     gatsbyRemarkPlugins: [
       {
         resolve: `gatsby-remark-autolink-headers`,
@@ -108,11 +110,17 @@ const mdxPlugins = {
           maxWidth: 1400,
           quality: 90,
           linkImagesToOriginal: true,
+          withWebp: true,
+          withAVIF: true,
+          tracedSVG: true,
+          showCaptions: true,
+          wrapperStyle: ``,
         },
       },
       `gatsby-remark-katex`,
       `gatsby-remark-graphviz`,
       `gatsby-remark-code-titles`,
+      `gatsby-remark-figure-caption`,
       {
         resolve: `gatsby-remark-prismjs`,
         options: {
@@ -123,8 +131,22 @@ const mdxPlugins = {
           noInlineHighlight: false,
         },
       },
+      `gatsby-remark-embed-video`,
+      `gatsby-remark-video`,
+      {
+        resolve: `gatsby-remark-copy-linked-files`,
+        options: {
+          destinationDir: `path/to/dir`,
+          ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
+        },
+      },
+      {
+        resolve: `gatsby-remark-figure-caption`,
+      },
     ],
-    plugins: [`@raae/gatsby-remark-oembed`],
+    plugins: [
+      `@raae/gatsby-remark-oembed`,
+    ],
   },
 };
 
@@ -206,7 +228,8 @@ export default {
     RSSFeedPlugin,
     ...SEOplugins,
     {
-      resolve: `gatsby-plugin-webpack-bundle-analyzer`,
+      // resolve: `gatsby-plugin-webpack-bundle-analyzer`,
+      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
       options: {
         openAnalyzer: false,
       },

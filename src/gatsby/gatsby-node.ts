@@ -1,4 +1,5 @@
 import type { GatsbyNode } from 'gatsby';
+import { normalizeTag } from '../lib';
 
 const imageFragment = `
 tracedSVG
@@ -71,7 +72,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions:
     const { frontmatter, slug } = node;
     const { tags } = frontmatter;
 
-    tags?.forEach((tag) => {
+    tags?.map(normalizeTag).forEach((tag) => {
       if (!postsByTag[tag]) postsByTag[tag] = [];
       if (!postsByTag[tag].includes(node)) postsByTag[tag].push(node);
     });

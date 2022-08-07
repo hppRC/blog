@@ -14,8 +14,13 @@ import { useSiteMetadata } from 'src/hooks';
 type HatebuProps = { url: string; title: string };
 
 const HatebuButton: React.FCX<HatebuProps> = ({ className, url, title }) => (
-  <button className={`${className} custom-hatebu-button`} type='button'>
-    <ExternalLink href={`http://b.hatena.ne.jp/add?mode=confirm&url=${url}&title=${title}`}>B!</ExternalLink>
+  <button className={`${className} custom-hatebu-button`} type='button' aria-label='はてな'>
+    <ExternalLink
+      className='w-8 h-full flex items-center justify-center'
+      href={`http://b.hatena.ne.jp/add?mode=confirm&url=${url}&title=${title}`}
+    >
+      B!
+    </ExternalLink>
   </button>
 );
 
@@ -28,7 +33,7 @@ export const ShareButtons: React.FC<{ title?: string; path?: string }> = memo(({
   return (
     <div className='border-b lg:px-2 py-4'>
       <p className='font-medium'>Share</p>
-      <div className='flex center pt-2 px-2'>
+      <div className='flex center pt-2'>
         <FacebookShareButton url={articleUrl} className='mx-1 hover:opacity-50'>
           <FacebookIcon size={32} round />
         </FacebookShareButton>
