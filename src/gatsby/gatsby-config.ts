@@ -110,7 +110,7 @@ const mdxPlugins = {
         options: {
           maxWidth: 1400,
           quality: 90,
-          linkImagesToOriginal: true,
+          linkImagesToOriginal: false,
           withWebp: true,
           withAVIF: true,
           tracedSVG: true,

@@ -31,9 +31,9 @@ export const ShareButtons: React.FC<{ title?: string; path?: string }> = memo(({
   const articleUrl = `${siteUrl}${path}`;
 
   return (
-    <div className='border-b lg:px-2 py-4'>
+    <div className='pt-4 pb-6 lg:px-2'>
       <p className='font-medium'>Share</p>
-      <div className='flex center pt-2'>
+      <div className='flex center px-1 pt-2'>
         <FacebookShareButton url={articleUrl} className='mx-1 hover:opacity-50'>
           <FacebookIcon size={32} round />
         </FacebookShareButton>

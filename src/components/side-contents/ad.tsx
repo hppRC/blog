@@ -29,7 +29,7 @@ const YOUTUBE_URL_LIST = [
   `https://www.youtube.com/embed/ZpE3oRKpJQE`, // アスノヨゾラ哨戒班 / ド葛本社
   `https://www.youtube.com/embed/2l_6oIGTrbg`, // スパークル / 大神ミオ
   // `https://www.youtube.com/embed/dPTeBvVJ_xY`, // 覚醒 / 星街すいせい
-  `https://www.youtube.com/embed/XKOtUV_7izo`, // 第六感 / Reol
+  `https://www.youtube.com/embed/Ue6VQTcKPQo`, // 第六感 / Reol
   `https://www.youtube.com/embed/F6KgJox-NmM`, // LAZY / DUSTCELL
   `https://www.youtube.com/embed/5Ec6eEOEuOM`, // 終点 / DUSTCELL
   `https://www.youtube.com/embed/broWJzNAdQM`, // あゝオオサカ dreamin' night / 歌衣メイカ, バーチャルゴリラ, 七瀬タク
@@ -73,19 +73,13 @@ const YouTubeIFrame = memo(() => {
     <iframe
       loading='lazy'
       className='w-full h-full aspect-video rounded'
-      src={url + '?autoplay=1&mute=1'}
+      src={`${url}?autoplay=1&mute=1`}
       frameBorder='0'
-      allow='accelerometer; autoplay; muted; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+      allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
       allowFullScreen
     />
   );
 });
-
-// const AdPlaceHolder = () => (
-//   <div className='flex overflow-hidden overflow w-40 h-40 justify-center items-center border border-gray-600 text-gray-700'>
-//     Ad will be added.
-//   </div>
-// );
 
 const OptoutButton = ({ setOptout }: { setOptout: React.Dispatch<React.SetStateAction<boolean>> }) => (
   <button
@@ -95,8 +89,8 @@ const OptoutButton = ({ setOptout }: { setOptout: React.Dispatch<React.SetStateA
     onClick={() => setOptout(true)}
   >
     <div className='w-full h-full m-auto'>
-      <div className='absolute top-50 left-50 w-1 h-5 bg-gray-700 rotate-45  translate-x-1.5 translate-y-0.5' />
-      <div className='absolute top-50 left-50 w-1 h-5 bg-gray-700 -rotate-45 translate-x-1.5 translate-y-0.5' />
+      <div className='absolute top-50 left-50 w-1 h-4 bg-gray-500 rotate-45  translate-x-1.5 translate-y-1' />
+      <div className='absolute top-50 left-50 w-1 h-4 bg-gray-500 -rotate-45 translate-x-1.5 translate-y-1' />
     </div>
   </button>
 );
@@ -111,19 +105,17 @@ export const Ad: React.FC = memo(() => {
     }, 1000 * 15);
   }, []);
 
-  return (
-    <div className='lg:px-2 xl:pr-4 py-4'>
-      {!waiting && (
-        <>
-          <p className='font-medium pb-4'>Favorites</p>
-          <div className='lg:px-2'>
-            <div className='w-full h-full aspect-video flex justify-center relative'>
-              {!optout && <OptoutButton setOptout={setOptout} />}
-              {!optout && <YouTubeIFrame />}
-            </div>
-          </div>
-        </>
-      )}
+  return !waiting && !optout ? (
+    <div className='pt-4 lg:pb-64 lg:px-2 xl:pr-4'>
+      <p className='font-medium pb-4'>Favorites</p>
+      <div>
+        <div className='w-full h-full aspect-video flex justify-center relative'>
+          <OptoutButton setOptout={setOptout} />
+          <YouTubeIFrame />
+        </div>
+      </div>
     </div>
+  ) : (
+    <></>
   );
 });
