@@ -73,9 +73,9 @@ const YouTubeIFrame = memo(() => {
     <iframe
       loading='lazy'
       className='w-full h-full aspect-video rounded'
-      src={url}
+      src={url + '?autoplay=1&mute=1'}
       frameBorder='0'
-      allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+      allow='accelerometer; autoplay; muted; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
       allowFullScreen
     />
   );
