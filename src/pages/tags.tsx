@@ -17,7 +17,7 @@ const Component: React.FC<Props> = ({ tags }) => (
       </h1>
       <ul className='md:py-8'>
         {tags.map((tagName) => (
-          <li className='py-2 overflow-scroll' key={tagName}>
+          <li className='py-2 overflow-scroll no-scrollbar' key={tagName}>
             <Link
               className='whitespace-no-wrap underline text-indigo-600 font-bold hover:opacity-50'
               key={tagName}

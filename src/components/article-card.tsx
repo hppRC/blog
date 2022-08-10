@@ -11,7 +11,7 @@ export const ArticleCard: React.FC<Props> = ({ post: { excerpt, frontmatter, slu
         {frontmatter?.title}
       </h2>
     </Link>
-    <ul className='py-0.5 flex overflow-scroll'>
+    <ul className='py-0.5 flex overflow-scroll no-scrollbar'>
       {Array.from(new Set(frontmatter.tags)).map((tagName) => (
         <li className='rounded border border-gray-800 mr-2 hover:bg-gray-200' key={`${slug}/${tagName}`}>
           <Link
