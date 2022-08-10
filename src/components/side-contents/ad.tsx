@@ -72,7 +72,7 @@ const YouTubeIFrame = memo(() => {
   return (
     <iframe
       loading='lazy'
-      className='w-full h-full rounded'
+      className='w-full h-full aspect-video rounded'
       src={url}
       frameBorder='0'
       allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
@@ -94,7 +94,10 @@ const OptoutButton = ({ setOptout }: { setOptout: React.Dispatch<React.SetStateA
     aria-label='optout button'
     onClick={() => setOptout(true)}
   >
-    ✖︎
+    <div className='w-full h-full m-auto'>
+      <div className='absolute top-50 left-50 w-1 h-5 bg-gray-700 rotate-45  translate-x-1.5 translate-y-0.5' />
+      <div className='absolute top-50 left-50 w-1 h-5 bg-gray-700 -rotate-45 translate-x-1.5 translate-y-0.5' />
+    </div>
   </button>
 );
 
@@ -114,7 +117,7 @@ export const Ad: React.FC = memo(() => {
         <>
           <p className='font-medium pb-4'>Favorites</p>
           <div className='lg:px-2'>
-            <div className='flex justify-center relative'>
+            <div className='w-full h-full aspect-video flex justify-center relative'>
               {!optout && <OptoutButton setOptout={setOptout} />}
               {!optout && <YouTubeIFrame />}
             </div>
