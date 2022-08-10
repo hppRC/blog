@@ -56,7 +56,7 @@
     "gatsby-transformer-remark": "^4.6.0",
     "gatsby-transformer-sharp": "^4.20.0",
     "katex": "^0.13.11",
-    "node-sass": "^6.0.1",
+    "node-sass": "^7.0.0",
     "prism-themes": "^1.7.0",
     "prismjs": "^1.24.1",
     "react": "^18.2.0",
