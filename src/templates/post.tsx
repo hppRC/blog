@@ -31,7 +31,7 @@ const Body = memo(({ body }: { body: string }) => (
 
 const Component: React.FCX<Props> = memo(({ body, image, headings, path, next, date, previous, title, tags, slug }) => (
   <div className='px-2 sm:px-16 lg:px-8 lg:grid lg:grid-cols-12 pb-12 mx-auto w-full'>
-    <article className='pb-8 lg:pb-0 lg:col-start-2 lg:col-span-8 xl:col-start-3 xl:col-span-7'>
+    <article className='pb-8 lg:pr-4 lg:pb-0 lg:col-start-2 lg:col-span-8 xl:col-start-3 xl:col-span-7'>
       <PostHeader date={date || `2022/01/01`} tags={tags || []} title={title || `blog.hpprc.dev`} />
       {image && <GatsbyImage image={image} className='-mx-4 lg:mx-0 mb-8 rounded-sm' alt='cover image' />}
       <Body body={body} />
@@ -42,7 +42,7 @@ const Component: React.FCX<Props> = memo(({ body, image, headings, path, next, d
         <SideContents path={path} title={title || slug} />
       </div>
     ) : (
-      <div className='pl-4 lg:pr-2 lg:col-span-3'>
+      <div className='pl-2 lg:pr-2 lg:col-span-3'>
         <SideContents headings={headings} path={path} title={title || slug} />
       </div>
     )}

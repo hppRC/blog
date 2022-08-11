@@ -106,8 +106,8 @@ export const Ad: React.FC = memo(() => {
   }, []);
 
   return !waiting && !optout ? (
-    <div className='pt-4 lg:pb-64 lg:px-2 xl:pr-4'>
-      <p className='font-medium pb-4'>Favorites</p>
+    <div className='pt-4 lg:pb-64 lg:pl-2'>
+      <p className='font-medium pb-2'>Favorites</p>
       <div>
         <div className='w-full h-full aspect-video flex justify-center relative'>
           <OptoutButton setOptout={setOptout} />
