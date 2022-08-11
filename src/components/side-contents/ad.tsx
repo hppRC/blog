@@ -83,7 +83,7 @@ const YouTubeIFrame = memo(() => {
 
 const OptoutButton = ({ setOptout }: { setOptout: React.Dispatch<React.SetStateAction<boolean>> }) => (
   <button
-    className='px-1 m-1 w-6 h-6 absolute right-0 top-0 bg-white rounded-full hover:opacity-50 opacity-75'
+    className='px-1 m-2 w-6 h-6 absolute right-0 top-0 bg-white rounded-full hover:opacity-50 opacity-75'
     type='button'
     aria-label='optout button'
     onClick={() => setOptout(true)}
