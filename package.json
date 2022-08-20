@@ -5,7 +5,7 @@
   "license": "MIT",
   "repository": "ssh://git@github.com/hppRC/blog.git",
   "scripts": {
-    "build": "GATSBY_CPU_COUNT=20 gatsby build",
+    "build": "gatsby build",
     "clean": "gatsby clean",
     "dev": "gatsby develop",
     "fix": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .eslintignore . --fix",
