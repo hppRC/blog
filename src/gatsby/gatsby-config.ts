@@ -183,7 +183,7 @@ const SEOplugins = [
       theme_color: `#03030f`,
       display: `standalone`,
       // path from root directory
-      icon: `contents/assets/icon.png`,
+      icon: `contents/assets/icon.jpg`,
       icon_options: {
         purpose: `any maskable`,
       },
