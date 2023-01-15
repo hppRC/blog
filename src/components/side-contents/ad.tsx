@@ -48,6 +48,15 @@ const YOUTUBE_URL_LIST = [
   `https://www.youtube.com/embed/LYFciXBcXIQ`, // 3時12分 / TAKU INOUE, 星街すいせい
   `https://www.youtube.com/embed/XNURRmk8YrQ`, // ソラニン / ASIAN KUNG-FU GENERATION
   `https://www.youtube.com/embed/_F2uHVrktYE`, // Daydreamer / Nornis
+  `https://www.youtube.com/embed/FT0GKCuSaW0`,
+  `https://www.youtube.com/embed/B50A9Nf5FCE`,
+  `https://www.youtube.com/embed/Jh_0EW6G3gQ`,
+  `https://www.youtube.com/embed/XEEXE8Ei5SA`,
+  `https://www.youtube.com/embed/6h6AQbdTkaE`,
+  `https://www.youtube.com/embed/rf4oFase7O4`,
+  `https://www.youtube.com/embed/VVaNq9uSJgY`,
+  `https://www.youtube.com/embed/sDhU6nWWja8`,
+  `https://www.youtube.com/embed/sZ2zCzRcQHg`,
 ];
 
 const choiceUrl = () => YOUTUBE_URL_LIST[Math.floor(Math.random() * YOUTUBE_URL_LIST.length)];
