@@ -122,14 +122,14 @@ http://www.organ-leather.com/items
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">綺麗な大学だ <a href="https://t.co/yri1bk6ioM">pic.twitter.com/yri1bk6ioM</a></p>&mdash; hpp (@hpp_ricecake) <a href="https://twitter.com/hpp_ricecake/status/1534047312506667009?ref_src=twsrc%5Etfw">June 7, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ちょい別アングル<br>明日から学祭があるらしい、久しぶりだな <a href="https://t.co/33dWnkK75O">pic.twitter.com/33dWnkK75O</a></p>&mdash; hpp (@hpp_ricecake) <a href="https://twitter.com/hpp_ricecake/status/1534524370160590848?ref_src=twsrc%5Etfw">June 8, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ちょい別アングル<br/>明日から学祭があるらしい、久しぶりだな <a href="https://t.co/33dWnkK75O">pic.twitter.com/33dWnkK75O</a></p>&mdash; hpp (@hpp_ricecake) <a href="https://twitter.com/hpp_ricecake/status/1534524370160590848?ref_src=twsrc%5Etfw">June 8, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 それと、趣味研究がめちゃくちゃ捗ってました。
 
 単語をベクトルで表現するWord2Vecを自分で学習してみて、その挙動を観察するなどしていました。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ベクトルの次元数を<br>10, 50, 300, 768<br>で変化させて、Wikipedia (約2GiB)で5 epoch学習したWord2Vec (Skip-gram)の類似単語検索結果。結果として<br><br>・小さい次元数だと結構微妙<br>・次元を大きくすると徐々に類似度が小さくなる<br>・次元を大きくするほど訓練が多く必要っぽい(768はunderfittingっぽい) <a href="https://t.co/ly2aQZ2PCi">pic.twitter.com/ly2aQZ2PCi</a></p>&mdash; hpp (@hpp_ricecake) <a href="https://twitter.com/hpp_ricecake/status/1535981755626553345?ref_src=twsrc%5Etfw">June 12, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ベクトルの次元数を<br/>10, 50, 300, 768<br/>で変化させて、Wikipedia (約2GiB)で5 epoch学習したWord2Vec (Skip-gram)の類似単語検索結果。結果として<br/><br/>・小さい次元数だと結構微妙<br/>・次元を大きくすると徐々に類似度が小さくなる<br/>・次元を大きくするほど訓練が多く必要っぽい(768はunderfittingっぽい) <a href="https://t.co/ly2aQZ2PCi">pic.twitter.com/ly2aQZ2PCi</a></p>&mdash; hpp (@hpp_ricecake) <a href="https://twitter.com/hpp_ricecake/status/1535981755626553345?ref_src=twsrc%5Etfw">June 12, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 これめちゃくちゃ楽しかったのでどこかにお出ししたいですね。
 
@@ -210,18 +210,18 @@ http://www.organ-leather.com/items
 
 研究方面だと、著名な研究の再現実装を公開するなどしていました。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">対照学習を用いた文埋め込み手法であるSimCSEの再現実装を公開しました。素のPyTorchでシンプルに実装し、注釈/解説コメントを100行くらい書きました。<br><br>ついでに、4つのモデルを50回ずつfine-tuningして性能評価したのでその結果も記載してあります。<br>参考になれば幸いです🙏<a href="https://t.co/tjnIpqu4wZ">https://t.co/tjnIpqu4wZ</a></p>&mdash; Hayato Tsukagoshi (@hayato_tkgs) <a href="https://twitter.com/hayato_tkgs/status/1587016294884605954?ref_src=twsrc%5Etfw">October 31, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">対照学習を用いた文埋め込み手法であるSimCSEの再現実装を公開しました。素のPyTorchでシンプルに実装し、注釈/解説コメントを100行くらい書きました。<br/><br/>ついでに、4つのモデルを50回ずつfine-tuningして性能評価したのでその結果も記載してあります。<br/>参考になれば幸いです🙏<a href="https://t.co/tjnIpqu4wZ">https://t.co/tjnIpqu4wZ</a></p>&mdash; Hayato Tsukagoshi (@hayato_tkgs) <a href="https://twitter.com/hayato_tkgs/status/1587016294884605954?ref_src=twsrc%5Etfw">October 31, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 あんまりこういう研究&エンジニアリングな話が出来る人って多くはない印象なので、ここらへん強みにしていきたいですね。
 
 それと輪講資料とかも公開してたみたいです。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">事前学習済み言語モデルを統合することで構築される大規模Variational Auto-Encoder (VAE)モデルのOptimusと、その論文について解説した(輪講)資料を公開しました。<br><br>VAEの目的関数の導出から説明しているので、ぜひVAEの勉強用としてもご覧ください🙏<a href="https://t.co/1vMcRlzRCE">https://t.co/1vMcRlzRCE</a></p>&mdash; Hayato Tsukagoshi (@hayato_tkgs) <a href="https://twitter.com/hayato_tkgs/status/1582312818535469056?ref_src=twsrc%5Etfw">October 18, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">事前学習済み言語モデルを統合することで構築される大規模Variational Auto-Encoder (VAE)モデルのOptimusと、その論文について解説した(輪講)資料を公開しました。<br/><br/>VAEの目的関数の導出から説明しているので、ぜひVAEの勉強用としてもご覧ください🙏<a href="https://t.co/1vMcRlzRCE">https://t.co/1vMcRlzRCE</a></p>&mdash; Hayato Tsukagoshi (@hayato_tkgs) <a href="https://twitter.com/hayato_tkgs/status/1582312818535469056?ref_src=twsrc%5Etfw">October 18, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 あとこれはめちゃくちゃ楽しかったやつで、一つのテーマに基づいて、論文解説をする記事を書かせていただきました。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">近年普及している単語埋め込み技術は、単語を「点」でしか表現できず、概念の広がり等を表現できません。<br><br>本記事では、単語を「箱」として表現する最新・強力な埋め込み手法「Box Embedding」を基礎から解説しました。<br><br>名古屋大学の塚越さん (<a href="https://twitter.com/hpp_ricecake?ref_src=twsrc%5Etfw">@hpp_ricecake</a>)による執筆です<a href="https://t.co/ogQebbjXvR">https://t.co/ogQebbjXvR</a></p>&mdash; ステート・オブ・AI ガイド (@stateofai_ja) <a href="https://twitter.com/stateofai_ja/status/1580371573445636096?ref_src=twsrc%5Etfw">October 13, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">近年普及している単語埋め込み技術は、単語を「点」でしか表現できず、概念の広がり等を表現できません。<br/><br/>本記事では、単語を「箱」として表現する最新・強力な埋め込み手法「Box Embedding」を基礎から解説しました。<br/><br/>名古屋大学の塚越さん (<a href="https://twitter.com/hpp_ricecake?ref_src=twsrc%5Etfw">@hpp_ricecake</a>)による執筆です<a href="https://t.co/ogQebbjXvR">https://t.co/ogQebbjXvR</a></p>&mdash; ステート・オブ・AI ガイド (@stateofai_ja) <a href="https://twitter.com/stateofai_ja/status/1580371573445636096?ref_src=twsrc%5Etfw">October 13, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Box Embeddingという、単語その他のデータを「ベクトル」ではなく「箱」で表現するという話で、自分の興味にもかなり合致しており、非常にいい経験になりました(あと色んな人に見てもらえて嬉しかったですね)。
 
@@ -252,7 +252,7 @@ Box Embeddingという、単語その他のデータを「ベクトル」では�
 
 また、論文解説記事の寄稿をまたやっていました。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">本記事では、歪んだ空間である双曲空間上に単語などを埋め込む「双曲埋め込み」を解説します。代表的なポワンカレ埋め込みから始め、双曲埋め込みの発展的な手法や強化学習を組み合わせた最新手法について解説します。<br><br>名古屋大学の塚越さん (<a href="https://twitter.com/hpp_ricecake?ref_src=twsrc%5Etfw">@hpp_ricecake</a>)による執筆です<a href="https://t.co/KjfoPigjaC">https://t.co/KjfoPigjaC</a></p>&mdash; ステート・オブ・AI ガイド (@stateofai_ja) <a href="https://twitter.com/stateofai_ja/status/1607970864267681792?ref_src=twsrc%5Etfw">December 28, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">本記事では、歪んだ空間である双曲空間上に単語などを埋め込む「双曲埋め込み」を解説します。代表的なポワンカレ埋め込みから始め、双曲埋め込みの発展的な手法や強化学習を組み合わせた最新手法について解説します。<br/><br/>名古屋大学の塚越さん (<a href="https://twitter.com/hpp_ricecake?ref_src=twsrc%5Etfw">@hpp_ricecake</a>)による執筆です<a href="https://t.co/KjfoPigjaC">https://t.co/KjfoPigjaC</a></p>&mdash; ステート・オブ・AI ガイド (@stateofai_ja) <a href="https://twitter.com/stateofai_ja/status/1607970864267681792?ref_src=twsrc%5Etfw">December 28, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 今回の話もかなり面白く、データを双極空間上に埋め込む双曲埋め込みという手法を題材にした記事なのですが、執筆にともなって多様体関連の知識を自分の中でまとめるいい機会になりました。
 大変感謝です。
