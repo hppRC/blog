@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: crazy-max/ghaction-github-labeler@v2
+      - uses: crazy-max/ghaction-github-labeler@v4
         with:
           yaml_file: ".github/labels.yml"
           skip_delete: true # 定義ファイルに記載の無いラベルの削除を行わない
